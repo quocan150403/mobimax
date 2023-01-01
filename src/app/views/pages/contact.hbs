@@ -1,0 +1,140 @@
+<section class="contact mt-main mb-main pd">
+  <div class="grid wide">
+    <h2 class="title large">Contact us</h2>
+    <p class="description large">
+      Get in touch
+    </p>
+    <div class="space-border"></div>
+
+    <div class="row">
+      <div class="col l-12 m-12 c-12">
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=17XnUlHmtg2CCU0dHD95Zp4Asd-23psU&ehbc=2E312F"
+            width="100%"
+            height="480"
+          ></iframe>
+        </div>
+        <div id="map"></div>
+      </div>
+
+      <div class="col l-4 l-o-2 m-6 c-12">
+
+        <form action="" method="POST" class="form checkout-form" id="form-contact">
+          <div class="form-group">
+            <label for="username" class="form-label">Your Name (required)</label>
+            <div class="input-group">
+              <input id="username" name="username" type="text" class="form-control" />
+              <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            </div>
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Your Email (required)</label>
+            <div class="input-group">
+              <input id="email" name="email" type="email" class="form-control" />
+              <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            </div>
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <div class="input-group">
+              <input id="subject" name="subject" type="text" class="form-control" />
+              <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            </div>
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Your Message</label>
+            <div class="input-group">
+              <textarea id="message" class="form-control form-textarea" cols="30" rows="5"></textarea>
+              <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            </div>
+            <span class="form-message"></span>
+          </div>
+
+          <div class="contact-btn">
+            <button class="custom-btn btn-3">
+              <span>SEND MESSAGE</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="col l-4 m-6 c-12">
+        <div class="contact-info">
+          <h2 class="title">
+            Social links
+          </h2>
+          <div class="contact-info__space"></div>
+          <ul class="footer-box__social">
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-skype"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="space-border"></div>
+          <h2 class="title">
+            General equerries
+          </h2>
+          <p class="contact-info__text">Mobimax<br />
+            Auto Parts Shop<br />
+            17 Antares Place,<br />
+            Mairangi Bay,<br />
+            Auckland 0632</p>
+          <div class="space-border"></div>
+          <div class="contact-info__hotline">
+            <span class="contact-info__hotline-icon">
+              <i class="fa-solid fa-headset"></i>
+            </span>
+            <div class="contact-info__hotline-content">
+              <h3>Call us 24/7!</h3>
+              <p>(800) 8001-8588, (0600) 874 548</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="public/libs/validator.js"></script>
+<script>
+  Validator({ form: '#form-contact', formGroupSelector: '.form-group', errorSelector: '.form-message', rules: [
+  Validator.isRequired('#username'), Validator.isEmail('#email'), Validator.isRequired('#subject'),
+  Validator.isRequired('#message'), ] });
+</script>
+<!-- <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+  defer></script> -->

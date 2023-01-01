@@ -1,0 +1,310 @@
+<?php
+extract($data["product"]);
+?>
+<section class="mt-main product-detail">
+  <div class="grid wide">
+    <div class="row pd">
+
+      <div class="col l-6 m-12 c-12">
+        <div class="product-detail__wrap-img">
+          <div class="slider-for">
+            <div>
+              <img src="public/image/products/<?=$image ?>">
+            </div>
+            <div>
+              <img src="public/image/products/product2.jpg" alt="">
+            </div>
+            <div>
+              <img src="public/image/products/product3.jpg" alt="">
+            </div>
+            <div>
+              <img src="public/image/products/product2.jpg" alt="">
+            </div>
+            <div>
+              <img src="public/image/products/product3.jpg" alt="">
+            </div>
+          </div>
+
+          <div class="product-detail__img-small">
+            <div class="slider-nav">
+              <img src="public/image/products/<?=$image ?>">
+              <img src="public/image/products/product2.jpg" alt="">
+              <img src="public/image/products/product3.jpg" alt="">
+              <img src="public/image/products/product2.jpg" alt="">
+              <img src="public/image/products/product3.jpg" alt="">
+            </div>
+
+            <div class="custom-arrow-slick-prev product-detail-arrow-slick-prev">
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div class="custom-arrow-slick-next product-detail-arrow-slick-next">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col l-6 m-12 c-12">
+        <div class="product-content product-detail__info">
+          <h2 class="product-content__name">
+          <?=$name ?>
+          </h2>
+          <div class="product-content__wrap-price">
+            <?php if($priceold) 
+              echo '
+              <p class="product-content__price-old">
+              $'.$priceold.'
+              </p>
+              ';
+            ?>
+            <h2 class="product-content__price">
+              <?php echo '$'.$price?>
+            </h2>
+          </div>
+          <div class="product-content__star">
+            <?php
+              for ($i = 1; $i <= 5; $i++) {
+                if ($i <= $star) {
+                  echo '<i class="fa-solid fa-star-sharp"></i>';
+                } else {
+                  echo '<i class="fa-regular fa-star-sharp"></i>';
+                }
+              }
+            ?>
+          </div>
+          <p class="product-content__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod
+            tempor incididunt ut labore</p>
+          <div class="product-content__amount">33 in stock</div>
+          <form action="" class="product-content__form">
+            <input value="1" type="number">
+            <div class="product-content__btn">
+              <button class="custom-btn btn-3">
+                <span>ADD TO CART</span>
+              </button>
+            </div>
+          </form>
+          <div class="product-content__text">
+            Categories:
+            <span>GPS Systems, Lighting</span>
+          </div>
+          <div class="product-content__text">
+            Categories:
+            <span>Hella, KOITO, Magneti Marelli, OSRAM, Valeo</span>
+          </div>
+
+          <ul class="product-content__social">
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-pinterest-p"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="description">
+  <div class="grid wide">
+    <div class="row pd">
+
+      <div class="col l-12 m-12 c-12">
+        <!-- Tab items -->
+        <div class="tabs">
+          <div class="tab-item">Description</div>
+          <div class="tab-item">Additional Info</div>
+          <div class="tab-item active">Review (4)</div>
+          <div class="line"></div>
+        </div>
+
+        <!-- Tab content -->
+        <div class="tab-content">
+          <div class="tab-pane">
+            <p>
+              Contrary to popular belief, Lorem Ipsum is not simply random
+              text. It has roots in a piece of classical Latin literature
+              from 45 BC, making it over 2000 years old. Vivamus bibendum
+              magna Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit.Contrary to popular belief, Lorem Ipsum is not simply
+              random text. It has roots in a piece of classical Latin
+              literature from 45 BC, making it over 2000 years old.
+            </p>
+            <p>
+              At vero eos et accusamus et iusto odio dignissimos ducimus
+              qui blanditiis praesentium voluptatum deleniti atque
+              corrupti quos dolores et quas molestias excepturi sint
+              occaecati cupiditate non provident, similique sunt in culpa
+              qui officia deserunt mollitia animi, id est laborum et
+              dolorum fuga. Et harum quidem rerum facilis est et expedita
+              distinctio.
+            </p>
+          </div>
+          <div class="tab-pane">
+            <table>
+              <tr>
+                <td>Style</td>
+                <td>Modern</td>
+              </tr>
+              <tr>
+                <td>Brand</td>
+                <td>Ingrid Lauritz</td>
+              </tr>
+              <tr>
+                <td>Weight</td>
+                <td>2kg</td>
+              </tr>
+              <tr>
+                <td>Height</td>
+                <td>74,4cm</td>
+              </tr>
+              <tr>
+                <td>Warranty</td>
+                <td>2 years</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="tab-pane active">
+            <div class="review ">
+              <img class="review-img" src="public/image/others/testimonial-1.jpg" alt="" />
+              <div class="review-info">
+                <h2 class="review-info__name">Alea Brooks</h2>
+                <p class="review-info__date">March 5, 2018</p>
+                <p class="review-info__content hide-on-mobile">
+                  Lorem Ipsumin gravida nibh vel velit auctor aliquet.
+                  Aenean sollicitudin, lorem quis bibendum auctor, nisi
+                  elit consequat ipsum, nec sagittis sem nibh id elit.
+                  Duis sed odio sit amet nibh vulputate
+                </p>
+                <div class="review-info__star-box hide-on-tablet hide-on-pc">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+
+              <div class="review-info__star-box hide-on-mobile">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            <p class="review-info__content hide-on-tablet hide-on-pc">
+              Lorem Ipsumin gravida nibh vel velit auctor aliquet.
+              Aenean sollicitudin, lorem quis bibendum auctor, nisi
+              elit consequat ipsum, nec sagittis sem nibh id elit.
+              Duis sed odio sit amet nibh vulputate
+            </p>
+
+            <div class="comment">
+              <form action="" class="form-comment" method="POST" id="form-comment">
+                <h2 class="comment-heading">Add a review</h2>
+                <div class="comment-rating">
+                  <i data-id="1" class="rating-js fa-regular fa-star"></i>
+                  <i data-id="2" class="rating-js fa-regular fa-star"></i>
+                  <i data-id="3" class="rating-js fa-regular fa-star"></i>
+                  <i data-id="4" class="rating-js fa-regular fa-star"></i>
+                  <i data-id="5" class="rating-js fa-regular fa-star"></i>
+                </div>
+
+                <input type="number" hidden value="0" class="input-rating" name="rating">
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <textarea id="review" placeholder="Your review *" class="form-control form-textarea" cols="30"
+                      rows="7"></textarea>
+                    <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                  </div>
+                  <span class="form-message"></span>
+                </div>
+
+                <div class="comment-group">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input id="name" placeholder="Your name *" name="name" type="text" class="form-control">
+                      <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    </div>
+                    <span class="form-message"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input id="email" placeholder="Your email *" name="email" type="text" class="form-control">
+                      <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    </div>
+                    <span class="form-message"></span>
+                  </div>
+
+                </div>
+
+                <div class="btn-comment">
+                  <button class="custom-btn btn-3">
+                    <span>Submit Review</span>
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="product-related pd">
+  <div class="grid wide">
+    <h2 class="title">Related products</h2>
+
+    <div class="custom-arrow-slick-prev product-related-arrow-slick-prev">
+      <i class="fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="custom-arrow-slick-next product-related-arrow-slick-next">
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <div class="product-related-slick">
+      <?php
+        renderProducts($data["productRelated"], '')
+      ?>
+    </div>
+  </div>
+</section>
+<script src="public/libs/validator.js"></script>
+
+<script>
+// Mong muốn của chúng ta
+Validator({
+  form: '#form-comment',
+  formGroupSelector: '.form-group',
+  errorSelector: '.form-message',
+  rules: [
+    Validator.isRequired('#review'),
+    Validator.isRequired('#name'),
+    Validator.isEmail('#email'),
+  ]
+});
+</script>

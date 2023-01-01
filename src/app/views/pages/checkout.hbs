@@ -1,0 +1,220 @@
+<section class="checkout mt-main mb-main">
+  <div class="grid wide">
+    <div class="row">
+      <div class="col l-12 m-12 c-12">
+        <div class="checkout-code">
+          <p>Have a coupon?
+            <span class="checkout-code-toggle">Click here to enter your code</span>
+          </p>
+          <div class="checkout-code__inner">
+            <h6>If you have a coupon code, please apply it below.</h6>
+            <input type="text" placeholder="Coupon code" class="input-main" />
+            <div class="checkout-code__btn">
+              <button class="custom-btn btn-3">
+                <span>APPLY COUPON</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form action="" method="POST" id="form-checkout">
+      <div class="row pd">
+
+        <div class="col l-6 m-12 c-12">
+          <div class="checkout-info">
+            <h2 class="checkout-title">
+              Billing details
+            </h2>
+
+            <div class="form-group">
+              <label for="firstname" class="form-label">First name *</label>
+              <div class="input-group">
+                <input id="firstname" name="firstname" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="lastname" class="form-label">Last name *</label>
+              <div class="input-group">
+                <input id="lastname" name="lastname" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="company" class="form-label">Company name (optional) *</label>
+              <div class="input-group">
+                <input id="company" name="company" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="country" class="form-label">Country / Region *</label>
+              <select name="country" id="country" class="form-control">
+                <option value="">Chọn Tỉnh/TP</option>
+                <option value="HCM">TP.HCM</option>
+                <option value="HN">Hà Nội</option>
+              </select>
+              <span class="form-message"></span>
+              <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            </div>
+
+            <div class="form-group">
+              <label for="street" class="form-label">Street address *</label>
+              <div class="input-group">
+                <input id="street" name="street" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="town" class="form-label">Town / City *</label>
+              <div class="input-group">
+                <input id="town" name="town" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="county" class="form-label">County (optional)</label>
+              <div class="input-group">
+                <input id="county" name="county" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="postcode" class="form-label">Postcode *</label>
+              <div class="input-group">
+                <input id="postcode" name="postcode" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone *</label>
+              <div class="input-group">
+                <input id="phone" name="phone" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email address *</label>
+              <div class="input-group">
+                <input id="email" name="email" type="text" class="form-control" />
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="checkout-notes">
+              <h2 class="checkout-title">
+                Additional information
+              </h2>
+              <div class="form-group">
+                <label for="notes" class="form-label">Order notes (optional)</label>
+                <div class="input-group">
+                  <textarea
+                    id="notes"
+                    placeholder="Notes about your order,e.g special notes for delivery"
+                    class="form-control form-textarea"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                  <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                </div>
+                <span class="form-message"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col l-6 m-12 c-12">
+          <div class="checkout-order">
+            <h2 class="checkout-title">
+              Your order
+            </h2>
+
+            <table class="checkout-table" border="1">
+              <tr>
+                <th class="checkout-table-bg">Product</th>
+                <th class="checkout-table-bg">Subtotal</th>
+              </tr>
+
+              <tr>
+                <td>
+                  For 04-08 Ford F150 11th Gen Chrome Housing Amber Corner Headlight Headlamp 05 06 07 Left+Right
+                  <span class="checkout-bold">
+                    × 1
+                  </span>
+                </td>
+                <td>$183.44</td>
+              </tr>
+              <tr>
+                <th class="checkout-table-bg">Subtotal</th>
+                <td>$229.21</td>
+              </tr>
+              <tr>
+                <th class="checkout-table-bg">Total</th>
+                <td>
+                  <span class="checkout-bold">
+                    $229.21
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <div class="checkout-payment">
+              <h2 class="checkout-title">
+                Payment
+              </h2>
+
+              <div class="form-group">
+                <div class="payment">
+                  <input name="payment" checked type="radio" id="cash" value="0" class="form-control" />
+                  <label for="cash">Cash payment</label>
+                </div>
+                <div class="payment">
+                  <input name="payment" id="paypal" type="radio" value="1" class="form-control" />
+                  <label for="paypal">Paypal</label>
+                </div>
+                <span class="form-message"></span>
+              </div>
+
+              <div class="checkout-btn">
+                <button type="submit" class="custom-btn btn-3">
+                  <span>PLACE ORDER</span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<script src="public/libs/validator.js"></script>
+
+<script>
+  // Mong muốn của chúng ta Validator({ form: '#form-checkout', formGroupSelector: '.form-group', errorSelector:
+  '.form-message', rules: [ Validator.isRequired('#firstname'), Validator.isRequired('#lastname'), //
+  Validator.isRequired('#company'), Validator.isRequired('#country'), Validator.isRequired('#street'),
+  Validator.isRequired('#town'), Validator.isRequired('#town'), // Validator.isRequired('#county'),
+  Validator.isRequired('#postcode'), Validator.isRequired('#phone'), Validator.isEmail('#email'),
+  Validator.isRequired('#notes'), Validator.isRequired('input[name="payment"]', 'Vui lòng chọn Phương thức thanh toán'),
+  ] });
+</script>

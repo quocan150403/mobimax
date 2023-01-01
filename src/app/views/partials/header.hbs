@@ -1,1 +1,338 @@
-<h2>Header</h2>
+<header class="header">
+  <!-- Header top -->
+  <div class="header-top hide-on-mobile-tablet pd">
+    <div class="grid wide">
+      <div class="header-top__content">
+        <div class="header-top__left">
+          <ul class="header-left__list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              48 Walwyn Rd, Chapelton
+            </li>
+            <li>
+              <i class="fa-solid fa-phone-flip"></i>
+              0123 456 789
+            </li>
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              Mon. - Sat. 10:00 am - 20:00 pm
+            </li>
+          </ul>
+        </div>
+
+        <div class="header-top__right">
+          <ul class="header-right__list">
+            <li>
+              Currency:
+              <span class="header-right__money">$ USD</span>
+            </li>
+            <li>
+              <i class="fa-light fa-globe"></i>
+            </li>
+            <li class="header-top__user-toggle">
+              <i class="fa-regular fa-user"></i>
+              <ul class="header-top__user">
+                <li>
+                  <img class="header-user__img" src="/image/others/avatar.jpg" alt="">
+                  <div class="header-user__content">
+                    <h4 class="header-user__name">Quoc An</h4>
+                    <h5 class="header-user__email">voquocan99</h5>
+                  </div>
+                </li>
+                <hr>
+                <li><a href="ASM/account">Change password</a></li>
+                <li><a href="./home/logout">Log out</a>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header bot (logo, search, actions) -->
+  <div class="grid wide pd">
+    <div class="header-bot">
+      <a href="./" class="header-bot__logo hide-on-mobile-tablet">
+        <img src="/image/logo.png" alt="Mobimax">
+      </a>
+
+      <div class="header-bot__search">
+        <form class="header-search__form" method="GET" action="./shop">
+          <input required name="keyword" class="header-search__input" placeholder="Search for products..." type="text">
+          <button type="submit" class="header-search__btn">Search</button>
+        </form>
+      </div>
+
+      <div class="header-bot__other hide-on-mobile-tablet">
+        <ul class="header-other__list">
+          <li>
+            <a href="#">
+              <i class="fa-light fa-arrows-rotate"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-light fa-heart"></i>
+            </a>
+          </li>
+          <li class="header-cart__toggle">
+            <i class="header-cart__shopping fa-light fa-cart-shopping"></i>
+            <i class="header-cart__close fa-light fa-xmark"></i>
+            <div class="cart-content">
+              <span class="cart-title"> My cart</span>
+              <span class="cart-total">
+                $0.00
+              </span>
+            </div>
+
+            <!-- Cart box -->
+            <div class="header-cart__box">
+
+              <div class="header-cart__box-empty">
+                No products in the cart.
+              </div>
+
+              <div class="header-cart__box-products">
+                <ul class="header-cart__box-list">
+
+                  <li class="header-cart__box-item">
+                    <img class="header-cart__box-img" src="/image/products/product1.jpg" alt="">
+                    <div class="header-cart__box-info">
+                      <h3 class="header-cart__box-name">Pair of Rear Wheel Hub Bearings Repla Pair of Rear Wheel Hub
+                        Bearings Repla</h3>
+                      <div class="header-cart__box-wrap-price">
+                        <span class="header-cart__box-quantity">1</span>
+                        ×
+                        <span class="header-cart__box-price">$123.00</span>
+                      </div>
+                    </div>
+                    <div class="header-cart__box-close">
+                      <i class="fa-solid fa-xmark"></i>
+                    </div>
+                  </li>
+                </ul>
+
+                <div>
+                  <div class="header-cart__box-subtotal">
+                    Subtotal:
+                    <span>$223.22</span>
+                  </div>
+                  <div class="header-cart__box-wrap-btn">
+                    <div>
+                      <a href="./cart" class="custom-btn btn-3">
+                        <span>VIEW CART</span>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="./checkout" class="custom-btn btn-3">
+                        <span>CHECKOUT</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </li>
+        </ul>
+        <!-- Header nav -->
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Header nav main -->
+  <div class="header-nav hide-on-mobile-tablet pd">
+    <div class="grid wide">
+      <div class="header-nav__inner">
+
+        <div class="header-nav__group">
+          <div class="header-nav__category">
+            Shop departments
+            <i class="fa-light fa-angle-down"></i>
+          </div>
+
+          <nav>
+            <ul class="header-main__list">
+              <li class="header-main__item">
+                <a class="header-main__link" href="./">
+                  Home
+                </a>
+              </li>
+              <li class="header-main__item">
+                <a class="header-main__link" href="./shop">
+                  Shop
+                </a>
+              </li>
+              <li class="header-main__item">
+                <a class="header-main__link" href="./about">
+                  About
+                </a>
+              </li>
+              <li class="header-main__item">
+                <a class="header-main__link" href="./contact">
+                  Contact
+                </a>
+              </li>
+              <li class="header-main__item">
+                <a class="header-main__link" href="./faq">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-nav__filter">
+          <i class="fa-solid fa-car-rear"></i>
+          My vehicles
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Header show tablet and mobile -->
+  <div class="header-tablet-mobile hide-on-pc pd">
+    <div class="grid wide">
+      <div class="header-tablet-mobile-inner">
+        <div class="header-tablet-mobile-left">
+          <div class="header-menu hide-on-pc">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+
+          <div class="header-logo-tablet-mobile">
+            <a href="./"><img src="/image/logo-tablet-mobile.png" alt="Mobimax"></a>
+          </div>
+        </div>
+
+        <ul class="header-other-tablet-mobile">
+          <li>
+            <a href="./cart">
+              <i class="fa-light fa-cart-shopping"></i>
+            </a>
+          </li>
+          <li>
+            <a href="./login">
+              <i class="fa-light fa-user"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar on tablet and mobile-->
+  <div class="sidebar">
+    <span class="sidebar-close">
+      <i class="fa-regular fa-xmark"></i>
+    </span>
+    <div class="sidebar-logo">
+      <img src="/image/logo.png" alt="Mobimax">
+    </div>
+    <div class="sidebar-title">
+      SHOP DEPARTMENTS
+    </div>
+    <ul class="sidebar-nav">
+      <li>
+        <a href="./">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="./shop">
+          Shop
+        </a>
+      </li>
+      <li>
+        <a href="./blog">
+          Blog
+        </a>
+      </li>
+      <li>
+        <a href="./about">
+          Abous
+        </a>
+      </li>
+      <li>
+        <a href="./contact">
+          Contact
+        </a>
+      </li>
+      <li>
+        <a href="./faq">
+          FAQ
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Sidebar overlay  -->
+  <div class="sidebar-overlay" style="cursor: url(/image/others/close_icon_white.png), auto;"></div>
+
+</header>
+
+<!-- modal-->
+<div class="modal">
+  <div class="modal-container">
+    <span class="product-content__close">
+      <i class="fa-regular fa-xmark"></i>
+    </span>
+    <div class="modal-container__wrap-img">
+      <span class="modal-container__sale">-13%</span>
+      <img src="/image/products/product1.jpg" alt="">
+    </div>
+    <div class="product-content">
+      <h2 class="product-content__name">a For 04-08 Ford F150 11th Gen Chrome Housing Amber Corner Headlight Headlamp 05
+        06 07 Left+Right</h2>
+      <div class="product-content__wrap-price">
+        <del class="product-content__price-old">$210.75</del>
+        <h2 class="product-content__price">$183.44</h2>
+      </div>
+      <p class="product-content__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore</p>
+      <form action="" class="product-content__form">
+        <input value="1" type="number">
+        <div class="product-content__btn">
+          <button class="custom-btn btn-3">
+            <span>ADD TO CART</span>
+          </button>
+        </div>
+      </form>
+      <div class="product-content__text">
+        Categories:
+        <span>GPS Systems, Lighting</span>
+      </div>
+      <div class="product-content__text">
+        Categories:
+        <span>Hella, KOITO, Magneti Marelli, OSRAM, Valeo</span>
+      </div>
+
+      <ul class="product-content__social">
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

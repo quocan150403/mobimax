@@ -1,0 +1,254 @@
+<?php
+$category = $data["category"];
+
+if (isset($data['filterByCategory'])) {
+  $products = $data['filterByCategory'];
+} else if (isset($data['productsByPrice'])) {
+  $products = $data['productsByPrice'];
+} else if (isset($data['productsSearch'])) {
+  $products = $data['productsSearch'];
+} else if (isset($data['productsDefault'])) {
+  $arr = $data['productsDefault'];
+  $products = $arr[0];
+}
+?>
+<section class="shop mt-main">
+  <div class="grid wide">
+    <div class="row pd">
+
+      <!-- Sidebar -->
+      <div class="col l-3 m-3">
+        <div class="shop-sidebar">
+          <div class="shop-sidebar__close hide-on-pc">
+            <i class="fa-light fa-xmark"></i>
+          </div>
+
+          <!-- Category -->
+          <div class="shop-category">
+            <h3 class="shop-title">Categories</h3>
+            <ul class="shop-category__list">
+              <?php
+              foreach (json_decode($category, true) as $row) {
+                extract($row);
+                echo '
+              <li>
+                <a href="./shop/category/' . $slug . '">
+                  ' . $name . '
+                  <i class="fa-regular fa-angle-right"></i>
+                </a>
+              </li>
+              ';
+              }
+              ?>
+            </ul>
+          </div>
+
+          <!-- Filter -->
+          <div class="shop-filter-price">
+            <h3 class="shop-title main">Filter by price</h3>
+            <form method="POST">
+              <div class="slicer">
+                <div class="progress"></div>
+              </div>
+              <div class="range-input">
+                <input type="range" class="range-min" min="0" max="1000" value="0" step="10">
+                <input type="range" class="range-max" min="0" max="1000" value="1000" step="10">
+              </div>
+              <div class="price-input">
+                <span>Price:</span>
+                <div class="field">
+                  <input name="min" type="number" class="input-min" value="0">
+                </div>
+                <div class="separator">—</div>
+                <div class="field">
+                  <input name="max" type="number" class="input-max" value="1000">
+                </div>
+
+              </div>
+              <div>
+                <div class="shop-filter-price-btn">
+                  <button type="submit" name="filter-price" class="custom-btn btn-3">
+                    <span>Filter</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Brand -->
+          <div class="shop-brand">
+            <h3 class="shop-title main">Brand</h3>
+            <ul class="shop-brand__list">
+              <li>
+                <a href="#">
+                  <input id="1" type="checkbox">
+                  <label for="1">Bridgestone</label>
+                  <span>(2)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <input id="1" type="checkbox">
+                  <label for="1">Bridgestone</label>
+                  <span>(2)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <input id="1" type="checkbox">
+                  <label for="1">Bridgestone</label>
+                  <span>(2)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <input id="1" type="checkbox">
+                  <label for="1">Bridgestone</label>
+                  <span>(2)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <input id="1" type="checkbox">
+                  <label for="1">Bridgestone</label>
+                  <span>(2)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-shop-overlay hide-on-pc"></div>
+      </div>
+
+      <!-- Main -->
+      <div class="col l-9 m-12 c-12">
+        <div class="sidebar-toggle hide-on-pc">
+          <i class="fa-regular fa-sliders"></i>
+        </div>
+        <div class="shop-main">
+          <!-- s1 -->
+          <div class="shop-main__s1">
+            <select class="shop-select ">
+              <option value="">Default sorting</option>
+              <option value="">Sort by popularity</option>
+              <option value="">Sort by average rating</option>
+              <option value="">Sort by latest</option>
+              <option value="">Sort by price: low to high</option>
+              <option value="">Sort by price: high to low</option>
+            </select>
+            <p class="shop-s1__result">Showing 1–12 of 95 results</p>
+          </div>
+
+          <!-- s2 -->
+          <div class="shop-main__s2">
+            <div class="shop-main__s2-top">
+              CAR PARTS
+              <span>FOR ANY CAR</span>
+            </div>
+            <div class="shop-main__s2-bot">
+              <div class="shop-s2__content">
+                <select class="shop-select ">
+                  <option value="">Make</option>
+                </select>
+                <select class="shop-select ">
+                  <option value="">Model</option>
+                </select>
+                <select class="shop-select ">
+                  <option value="">Year</option>
+                </select>
+                <select class="shop-select ">
+                  <option value="">Trim</option>
+                </select>
+                <span>Or</span>
+                <input placeholder="Enter VIN" class="shop-select"></input>
+                <div class="shop-s2__btn">Search</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- s3 -->
+          <div class="shop-main__s3">
+            <img class="shop-s3__img" src="public/image/banners/banner_img_5-2-1.jpg" alt="">
+            <div class="shop-s3__space"></div>
+            <div class="shop-s3__inner">
+              <div class="shop-s3__content">
+                <p class="shop-s3__sub-title">One time special deals</p>
+                <h3 class="shop-s3__title">
+                  MOST
+                  <span>ESSENTIALS</span>
+                </h3>
+              </div>
+              <div class="shop-s3__btn">
+                <button class="custom-btn btn-3">
+                  <span>SEE DETAILS</span>
+                </button>
+              </div>
+            </div>
+            <div class="shop-s3__space"></div>
+          </div>
+
+          <!-- Products -->
+          <div class="shop-products">
+            <div class="row">
+              <?php
+              renderProducts($products);
+              ?>
+            </div>
+          </div>
+
+          <div class="pagination">
+            <?php
+            if (isset($arr)) {
+              $current_page = $arr[1];
+              $total_page = $arr[2];
+              // PHẦN HIỂN THỊ PHÂN TRANG
+              // HIỂN THỊ PHÂN TRANG
+
+              // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
+              if ($current_page > 1 && $total_page > 1) {
+                echo '
+                  <li class="pagination-item">
+                    <a href="./shop/page/' . ($current_page - 1) . '"         class="pagination-link">
+                      <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                  </li>';
+              }
+
+              // Lặp khoảng giữa
+              for ($i = 1; $i <= $total_page; $i++) {
+                // Nếu là trang hiện tại thì hiển thị thẻ span
+                // ngược lại hiển thị thẻ a
+                if ($i == $current_page) {
+                  echo '
+                  <li class="pagination-item active">
+                    <span>' . $i . '</span>
+                  </li>';
+                } else {
+                  echo '
+                  <li class="pagination-item">
+                    <a href="./shop/page/' . $i . '" class="pagination-link">
+                      ' . $i . '
+                    </a>
+                  </li>';
+                }
+              }
+              // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+              if ($current_page < $total_page && $total_page > 1) {
+                echo '
+                <li class="pagination-item">
+                  <a href="./shop/page/' . ($current_page + 1) . '" class="pagination-link">
+                    <i class="fa-solid fa-angle-right"></i>
+                  </a>
+                </li>';
+              }
+            }
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
