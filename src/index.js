@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const { engine } = require("express-handlebars");
 
+const route = require("./routes");
+
 const app = express();
 
 // Static files
@@ -21,9 +23,8 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "app/views"));
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
+// Routes init
+route(app);
 
 app.listen(3000, () => {
   console.log(`App listening on port 3000`);
