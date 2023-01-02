@@ -4,44 +4,54 @@ class siteController {
     res.render("home");
   }
 
+  // [GET] /shop
+  shop(req, res, next) {
+    res.render("pages/shop");
+  }
+
   // [GET] /about
   about(req, res, next) {
-    res.render("page/about");
+    res.render("pages/about");
   }
 
   // [GET] /cart
   cart(req, res, next) {
-    res.render("page/cart");
+    res.render("pages/cart");
   }
 
   // [GET] /checkout
   checkout(req, res, next) {
-    res.render("page/checkout");
+    res.render("pages/checkout");
   }
 
   // [GET] /contact
   contact(req, res, next) {
-    res.render("page/contact");
+    res.render("pages/contact");
   }
 
   // [GET] /faq
   faq(req, res, next) {
-    res.render("page/faq");
+    res.render("pages/faq");
   }
 
   // [GET] /product
   product(req, res, next) {
-    res.render("page/product");
+    res.render("pages/product");
+  }
+
+  // [GET] /register
+  register(req, res, next) {
+    res.render("pages/register");
+  }
+
+  // [GET] /login
+  login(req, res, next) {
+    res.render("pages/login");
   }
 
   // [GET] /resister
   resister(req, res, next) {
-    res.render("page/resister");
-  }
-
-  // [GET] /shop
-  shop(req, res, next) {
-    res.render("page/shop");
+    res.render("pages/resister");
   }
 }
 module.exports = new siteController();

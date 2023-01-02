@@ -293,6 +293,7 @@ input {
   height: 100%;
   min-width: 120px;
   min-height: 40px;
+  max-height: 48px;
   border-radius: 5px;
   overflow: hidden;
   background: var(--secondary-color);
@@ -450,6 +451,9 @@ input {
   height: 40px;
   line-height: 40px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Slick */
@@ -620,6 +624,10 @@ input {
     transform: translateY(0);
   }
 }
+.header-user__close {
+  display: none;
+  font-size: 2.5rem !important;
+}
 
 .header-top__user {
   background: var(--white-color);
@@ -636,6 +644,7 @@ input {
   display: none;
   animation: showDropdown ease-in-out 0.3s;
   z-index: 2;
+  min-width: 260px;
 }
 
 .header-top__user hr {
@@ -993,7 +1002,7 @@ nav {
   position: absolute;
   right: 0;
   top: 100%;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+  box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
   display: none;
 }
 .header-cart__box-empty {
@@ -2480,6 +2489,9 @@ nav {
   text-align: center;
   transition: all ease-in-out 0.25s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .product-content__close:hover {
   background-color: #eee;
@@ -2619,13 +2631,16 @@ nav {
   background-color: #007bb6;
 }
 .product-content__social a {
-  display: block;
+  display: flex;
   width: 40px;
   height: 40px;
   color: var(--white-color);
   text-align: center;
   line-height: 40px;
   font-size: 1.8rem;
+}
+.product-content__social i {
+  margin: auto;
 }
 /* 404 */
 .error404 {
@@ -3104,10 +3119,11 @@ input[name="payment"] {
   display: block;
   background-color: var(--subtext-color);
   color: var(--white-color);
-  line-height: 24px;
-  text-align: center;
   font-size: 1rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cart-close:hover {
   background-color: var(--primary-color);
@@ -3898,6 +3914,9 @@ input[type="range"]::-moz-range-thumb {
   padding: 4px 0;
   font-weight: 500;
   color: var(--text-color);
+}
+.shop-category__list a:hover {
+  color: var(--primary-color);
 }
 .shop-category__list i {
   font-size: 1.2rem;

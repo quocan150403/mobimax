@@ -66,51 +66,51 @@ $(document).ready(() => {
   });
 
   // News
-  $(".news-slick").slick({
-    infinite: false,
-    speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    prevArrow: $(".news-arrow-slick-prev"),
-    nextArrow: $(".news-arrow-slick-next"),
-    responsive: [
-      {
-        breakpoint: 1023,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 739,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-        },
-      },
-    ],
-  });
+  // $(".news-slick").slick({
+  //   infinite: false,
+  //   speed: 300,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 1,
+  //   prevArrow: $(".news-arrow-slick-prev"),
+  //   nextArrow: $(".news-arrow-slick-next"),
+  //   responsive: [
+  //     {
+  //       breakpoint: 1023,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 739,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         arrows: false,
+  //       },
+  //     },
+  //   ],
+  // });
 
   // ========= Product detail ========
-  $(".slider-for").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: ".slider-nav",
-  });
+  // $(".slider-for").slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: false,
+  //   fade: true,
+  //   asNavFor: ".slider-nav",
+  // });
 
-  $(".slider-nav").slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: ".slider-for",
-    dots: false,
-    centerMode: true,
-    focusOnSelect: true,
-    prevArrow: $(".product-detail-arrow-slick-prev"),
-    nextArrow: $(".product-detail-arrow-slick-next"),
-  });
+  // $(".slider-nav").slick({
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   asNavFor: ".slider-for",
+  //   dots: false,
+  //   centerMode: true,
+  //   focusOnSelect: true,
+  //   prevArrow: $(".product-detail-arrow-slick-prev"),
+  //   nextArrow: $(".product-detail-arrow-slick-next"),
+  // });
 
   // Product Related
   $(".product-related-slick").slick({

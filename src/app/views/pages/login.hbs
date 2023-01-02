@@ -1,0 +1,56 @@
+<section>
+  <div class="grid wide">
+    <div class="row">
+      <div class="col l-4 l-o-4 m-8 m-o-2 c-12">
+        <div class="register-container">
+
+          <form action="" method="POST" class="form form-login" id="form-1">
+            <h3 class="heading">Login</h3>
+
+            <div class="spacer">
+            </div>
+
+            <div class="form-group">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group">
+                <input id="username" name="username" type="text" class="form-control" />
+                <span class="iconError">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <input id="password" name="password" type="password" class="form-control" />
+
+                <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              </div>
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-btn">
+              <button class="custom-btn btn-3">
+                <span>Login</span>
+              </button>
+            </div>
+
+            <div class="form-lost-password">
+              <a href="./login">Register</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="public/libs/validator.js"></script>
+
+<script>
+  Validator({ form: '#form-1', formGroupSelector: '.form-group', errorSelector: '.form-message', rules: [
+  Validator.isRequired('#username'), Validator.minLength('#password', 6), ] });
+</script>

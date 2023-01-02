@@ -1,17 +1,3 @@
-<?php
-$category = $data["category"];
-
-if (isset($data['filterByCategory'])) {
-  $products = $data['filterByCategory'];
-} else if (isset($data['productsByPrice'])) {
-  $products = $data['productsByPrice'];
-} else if (isset($data['productsSearch'])) {
-  $products = $data['productsSearch'];
-} else if (isset($data['productsDefault'])) {
-  $arr = $data['productsDefault'];
-  $products = $arr[0];
-}
-?>
 <section class="shop mt-main">
   <div class="grid wide">
     <div class="row pd">
@@ -27,19 +13,12 @@ if (isset($data['filterByCategory'])) {
           <div class="shop-category">
             <h3 class="shop-title">Categories</h3>
             <ul class="shop-category__list">
-              <?php
-              foreach (json_decode($category, true) as $row) {
-                extract($row);
-                echo '
               <li>
-                <a href="./shop/category/' . $slug . '">
-                  ' . $name . '
+                <a href="./shop/category/">
+                  category
                   <i class="fa-regular fa-angle-right"></i>
                 </a>
               </li>
-              ';
-              }
-              ?>
             </ul>
           </div>
 
@@ -51,17 +30,17 @@ if (isset($data['filterByCategory'])) {
                 <div class="progress"></div>
               </div>
               <div class="range-input">
-                <input type="range" class="range-min" min="0" max="1000" value="0" step="10">
-                <input type="range" class="range-max" min="0" max="1000" value="1000" step="10">
+                <input type="range" class="range-min" min="0" max="1000" value="0" step="10" />
+                <input type="range" class="range-max" min="0" max="1000" value="1000" step="10" />
               </div>
               <div class="price-input">
                 <span>Price:</span>
                 <div class="field">
-                  <input name="min" type="number" class="input-min" value="0">
+                  <input name="min" type="number" class="input-min" value="0" />
                 </div>
                 <div class="separator">—</div>
                 <div class="field">
-                  <input name="max" type="number" class="input-max" value="1000">
+                  <input name="max" type="number" class="input-max" value="1000" />
                 </div>
 
               </div>
@@ -81,39 +60,46 @@ if (isset($data['filterByCategory'])) {
             <ul class="shop-brand__list">
               <li>
                 <a href="#">
-                  <input id="1" type="checkbox">
+                  <input id="1" type="checkbox" />
                   <label for="1">Bridgestone</label>
                   <span>(2)</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <input id="1" type="checkbox">
+                  <input id="1" type="checkbox" />
                   <label for="1">Bridgestone</label>
                   <span>(2)</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <input id="1" type="checkbox">
+                  <input id="1" type="checkbox" />
                   <label for="1">Bridgestone</label>
                   <span>(2)</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <input id="1" type="checkbox">
+                  <input id="1" type="checkbox" />
                   <label for="1">Bridgestone</label>
                   <span>(2)</span>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <input id="1" type="checkbox">
+                  <input id="1" type="checkbox" />
                   <label for="1">Bridgestone</label>
                   <span>(2)</span>
                 </a>
               </li>
+              <div>
+                <div class="shop-filter-price-btn">
+                  <button type="submit" name="filter-price" class="custom-btn btn-3">
+                    <span>Filter</span>
+                  </button>
+                </div>
+              </div>
             </ul>
           </div>
 
@@ -131,7 +117,7 @@ if (isset($data['filterByCategory'])) {
         <div class="shop-main">
           <!-- s1 -->
           <div class="shop-main__s1">
-            <select class="shop-select ">
+            <select class="shop-select">
               <option value="">Default sorting</option>
               <option value="">Sort by popularity</option>
               <option value="">Sort by average rating</option>
@@ -143,7 +129,7 @@ if (isset($data['filterByCategory'])) {
           </div>
 
           <!-- s2 -->
-          <div class="shop-main__s2">
+          {{! <div class="shop-main__s2">
             <div class="shop-main__s2-top">
               CAR PARTS
               <span>FOR ANY CAR</span>
@@ -167,11 +153,11 @@ if (isset($data['filterByCategory'])) {
                 <div class="shop-s2__btn">Search</div>
               </div>
             </div>
-          </div>
+          </div> }}
 
           <!-- s3 -->
           <div class="shop-main__s3">
-            <img class="shop-s3__img" src="public/image/banners/banner_img_5-2-1.jpg" alt="">
+            <img class="shop-s3__img" src="/image/banners/banner_img_5-2-1.jpg" alt="" />
             <div class="shop-s3__space"></div>
             <div class="shop-s3__inner">
               <div class="shop-s3__content">
@@ -193,59 +179,71 @@ if (isset($data['filterByCategory'])) {
           <!-- Products -->
           <div class="shop-products">
             <div class="row">
-              <?php
-              renderProducts($products);
-              ?>
+              <div class="col l-4">
+                <div class="product">
+                  <a href="product/" class="product-wrap-img">
+                    <img class="product-img" src="/image/products/c1.jpg" />
+                    <!-- hide -->
+                    <div class="product-wrap-view">
+                      Quick view
+                    </div>
+                    <div class="product-wrap-sale">
+                      20%
+                    </div>
+                    <div class="product-wrap__icon">
+                      <span><i class="fa-thin fa-heart"></i></span>
+                      <span><i class="fa-thin fa-arrows-rotate"></i></span>
+                    </div>
+                  </a>
+
+                  <div class="product-info">
+                    <div class="product-info__border hide-on-mobile"></div>
+                    <a href="./product/" class="product-info__name">
+                      Lorem ipsum, dolor sit amet consectetur
+                    </a>
+                    <div class="product-info__star">
+                      <i class="fa-solid fa-star-sharp"></i>
+                      <i class="fa-solid fa-star-sharp"></i>
+                      <i class="fa-solid fa-star-sharp"></i>
+                      <i class="fa-solid fa-star-sharp"></i>
+                      <i class="fa-regular fa-star-sharp"></i>
+                    </div>
+                    <div class="product-info__wrap-price">
+                      <del class="product-info__priceold">
+                        $20.00
+                      </del>
+                      <div class="product-info__price">
+                        $20.00
+                      </div>
+                    </div>
+                    <div class="product-info__btn">
+                      Add to cart
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="pagination">
-            <?php
-            if (isset($arr)) {
-              $current_page = $arr[1];
-              $total_page = $arr[2];
-              // PHẦN HIỂN THỊ PHÂN TRANG
-              // HIỂN THỊ PHÂN TRANG
-
-              // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
-              if ($current_page > 1 && $total_page > 1) {
-                echo '
-                  <li class="pagination-item">
-                    <a href="./shop/page/' . ($current_page - 1) . '"         class="pagination-link">
-                      <i class="fa-solid fa-angle-left"></i>
-                    </a>
-                  </li>';
-              }
-
-              // Lặp khoảng giữa
-              for ($i = 1; $i <= $total_page; $i++) {
-                // Nếu là trang hiện tại thì hiển thị thẻ span
-                // ngược lại hiển thị thẻ a
-                if ($i == $current_page) {
-                  echo '
-                  <li class="pagination-item active">
-                    <span>' . $i . '</span>
-                  </li>';
-                } else {
-                  echo '
-                  <li class="pagination-item">
-                    <a href="./shop/page/' . $i . '" class="pagination-link">
-                      ' . $i . '
-                    </a>
-                  </li>';
-                }
-              }
-              // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
-              if ($current_page < $total_page && $total_page > 1) {
-                echo '
-                <li class="pagination-item">
-                  <a href="./shop/page/' . ($current_page + 1) . '" class="pagination-link">
-                    <i class="fa-solid fa-angle-right"></i>
-                  </a>
-                </li>';
-              }
-            }
-            ?>
+            <li class="pagination-item">
+              <a href="" class="pagination-link">
+                <i class="fa-solid fa-angle-left"></i>
+              </a>
+            </li>
+            <li class="pagination-item active">
+              <span>1</span>
+            </li>
+            <li class="pagination-item">
+              <a href="./shop/page/' . $i . '" class="pagination-link">
+                2
+              </a>
+            </li>
+            <li class="pagination-item">
+              <a href="./shop/page/' . ($current_page + 1) . '" class="pagination-link">
+                <i class="fa-solid fa-angle-right"></i>
+              </a>
+            </li>
           </div>
         </div>
       </div>
