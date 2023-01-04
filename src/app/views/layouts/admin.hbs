@@ -1,0 +1,64 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobimax</title>
+
+    <!-- date range picker -->
+    <link href="/admin/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+
+    <!-- App css -->
+    <link href="/admin/resource/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/resource/assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/resource/assets/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/resource/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/resource/assets/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/resource/assets/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/resource/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/admin/plugins/switchery/switchery.min.css" />
+
+    <script src="/admin/resource/assets/js/modernizr.min.js"></script>
+  </head>
+
+  <body class="fixed-left widescreen">
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+      <!-- Top Bar Start -->
+      {{>admin-topbar}}
+      <!-- Top Bar End -->
+
+      <!-- ========== Left Sidebar start ========== -->
+
+            {{>admin-sidebar}}
+      <!-- ========== Left Sidebar end ========== -->
+
+      <!-- ========== main content start ========== -->
+      <div class="content-page">
+
+        <!-- content start -->
+          {{{body}}}
+        <!-- content end -->
+
+        <!-- footer -->
+        {{>admin-footer}}
+      </div>
+
+      <!-- ========== main content end ========== -->
+
+      <!-- ========== Right sidebar start ========== -->
+      {{>admin-subsidebar}}
+
+      <!-- ========== Right sidebar end ========== -->
+
+    </div>
+    <!-- scripts -->
+    <script>
+      var resizefunc = [];
+    </script>
+  </body>
+
+</html>

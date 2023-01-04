@@ -22,7 +22,7 @@
 html {
   font-size: 62.5%;
   line-height: 1.6rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -201,7 +201,7 @@ input {
 
 .btn::after,
 .btn::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -251,7 +251,7 @@ input {
 
 .btn-black::after,
 .btn-black::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   width: 20px;
@@ -327,7 +327,7 @@ input {
 
 .btn-3:after {
   position: absolute;
-  content: "";
+  content: '';
   width: 0;
   height: 100%;
   top: 0;
@@ -471,7 +471,7 @@ input {
   position: relative;
 }
 .slick-dots .slick-active button::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -601,7 +601,7 @@ input {
 }
 .header-right__list > li:nth-child(1):after,
 .header-right__list > li:nth-child(2)::after {
-  content: "";
+  content: '';
   width: 1px;
   height: 58%;
   background-color: #e2e2e2;
@@ -772,7 +772,7 @@ input {
 }
 .header-other__list > li:nth-child(1)::before,
 .header-other__list > li:nth-child(2)::before {
-  content: "";
+  content: '';
   background-color: #e2e2e2;
   width: 1px;
   height: 130%;
@@ -884,7 +884,7 @@ nav {
   position: relative;
 }
 .header-main__link::before {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   bottom: 16px;
@@ -973,7 +973,7 @@ nav {
   margin-right: 16px;
 }
 .header-other-tablet-mobile li:first-child a::before {
-  content: "";
+  content: '';
   width: 0.5px;
   height: 80%;
   background-color: #ffffff3d;
@@ -1058,6 +1058,7 @@ nav {
   font-weight: 700;
 }
 .header-cart__box-subtotal {
+  color: var(--black-color);
   padding: 24px 0;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -1382,7 +1383,7 @@ nav {
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
-  padding: 32px;
+  padding: 22px;
 }
 .service-container i {
   font-size: 4rem;
@@ -1844,7 +1845,7 @@ nav {
   overflow: hidden;
 }
 .banner-inner::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -1856,7 +1857,7 @@ nav {
   z-index: -1;
 }
 .banner-inner::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -2321,7 +2322,7 @@ nav {
   text-transform: uppercase;
 }
 .footer-box__title::after {
-  content: "";
+  content: '';
   width: 100%;
   height: 0.5px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -2330,7 +2331,7 @@ nav {
   bottom: -90%;
 }
 .footer-box__title::before {
-  content: "";
+  content: '';
   width: 20%;
   height: 2px;
   background-color: var(--primary-color);
@@ -3031,7 +3032,7 @@ i.iconEyes.active {
   font-weight: 600;
 }
 /* file */
-input[type="file"] {
+input[type='file'] {
   padding: 8px 12px;
 }
 /* radio && check box*/
@@ -3043,7 +3044,7 @@ input[type="file"] {
   line-height: 2.7rem;
 }
 .payment .form-control,
-input[name="payment"] {
+input[name='payment'] {
   margin-right: 4px;
   width: auto;
   height: auto;
@@ -3787,8 +3788,8 @@ input[name="payment"] {
   color: var(--subtext-color);
   font-weight: 600;
 }
-.shop input[type="number"]::-webkit-outer-spin-button,
-.shop input[type="number"]::-webkit-inner-spin-button {
+.shop input[type='number']::-webkit-outer-spin-button,
+.shop input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 .price-input .separator {
@@ -3823,7 +3824,7 @@ input[name="payment"] {
   background: none;
   pointer-events: none;
 }
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   height: 17px;
   width: 17px;
   -webkit-appearance: none;
@@ -3832,7 +3833,7 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: var(--primary-color);
   cursor: pointer;
 }
-input[type="range"]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
   cursor: pointer;
   border-radius: 4px;
   height: 17px;
@@ -3883,7 +3884,7 @@ input[type="range"]::-moz-range-thumb {
   z-index: 3;
 }
 .main.shop-title::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0px;
   bottom: -9.5px;
@@ -3894,7 +3895,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .shop-title::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -16px;
   width: 100%;

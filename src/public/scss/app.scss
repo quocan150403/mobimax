@@ -1,5 +1,123 @@
 @import "variables";
 
-.demo {
-  color: #000;
+// Orders
+.orders-table {
+  width: 100%;
+  border-spacing: 0;
+  text-align: left;
+
+  tr + tr {
+    border-bottom: 1px solid #e3e7e8;
+  }
+
+  tbody tr:first-child {
+    border-top: 1px solid #e3e7e8;
+    border-bottom: 1px solid #e3e7e8;
+
+    td:first-child {
+      font-weight: 500;
+    }
+  }
+
+  th {
+    padding-bottom: 10px;
+  }
+
+  td {
+    padding: 16px 0;
+    font-size: 18px;
+  }
+
+  .btn-order {
+    width: 120px;
+    margin: 0 auto;
+  }
+}
+// Order detail
+.order-detail__message {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--black-color);
+  margin: 22px 0 33px;
+}
+
+.order-detail__info {
+  border: 1px solid #e3e7e8;
+  display: flex;
+  list-style: none;
+  padding: 25px 40px 15px;
+  font-size: 1.6rem;
+
+  .order-detail__box {
+    padding-right: 20px;
+    flex: 1;
+    margin-bottom: 10px;
+
+    strong {
+      margin-top: 12px;
+      display: block;
+    }
+  }
+}
+
+.order-detail__user {
+  padding: 30px;
+  padding-bottom: 46px;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+}
+
+.divider {
+  margin: 50px 0;
+  position: relative;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0px;
+    height: 0;
+    border-top: 1px solid #dddddd;
+  }
+
+  &::before {
+    margin-top: 1px;
+  }
+
+  &::after {
+    margin-top: -1px;
+  }
+
+  i {
+    background-color: var(--white-color);
+    color: #d9d9d9;
+    position: relative;
+    z-index: 1;
+    font-size: 30px;
+    padding: 0 40px;
+  }
+}
+
+.order-detail__table {
+  width: 100%;
+
+  tbody tr:first-child {
+    border-top: 1px solid #e5e3e3;
+    border-bottom: 1px solid #e5e3e3;
+  }
+
+  tr + tr {
+    border-bottom: 1px solid #e5e3e3;
+  }
+
+  tr td:first-child {
+    font-weight: 500;
+  }
+
+  tr td {
+    padding: 12px 0;
+  }
 }
