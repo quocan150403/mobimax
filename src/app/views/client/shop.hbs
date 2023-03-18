@@ -11,94 +11,89 @@
 
           <!-- Category -->
           <div class="shop-category">
-            <h3 class="shop-title">Categories</h3>
+            <h3 class="shop-title">Danh mục</h3>
             <ul class="shop-category__list">
+              {{#each categories}}
               <li>
-                <a href="./shop/category/">
-                  category
+                <a {{activeShop}} href="/shop/category/{{this.slug}}">
+                  {{this.name}}
                   <i class="fa-regular fa-angle-right"></i>
                 </a>
               </li>
+              {{/each}}
             </ul>
           </div>
 
-          <!-- Filter -->
+          <!-- Filter price -->
           <div class="shop-filter-price">
-            <h3 class="shop-title main">Filter by price</h3>
-            <form method="POST">
-              <div class="slicer">
-                <div class="progress"></div>
-              </div>
-              <div class="range-input">
-                <input type="range" class="range-min" min="0" max="1000" value="0" step="10" />
-                <input type="range" class="range-max" min="0" max="1000" value="1000" step="10" />
-              </div>
-              <div class="price-input">
-                <span>Price:</span>
-                <div class="field">
-                  <input name="min" type="number" class="input-min" value="0" />
-                </div>
-                <div class="separator">—</div>
-                <div class="field">
-                  <input name="max" type="number" class="input-max" value="1000" />
-                </div>
+            <h3 class="shop-title main">Lọc theo giá</h3>
+            <ul class="shop-price-list">
+              {{!-- <li class="shop-brand-item" data-id="${item.id}">
+                <input class="input-brand" id="price-${item.id}" type="checkbox" />
+                <label for="price-${item.id}">Dưới 1 triệu</label>
+              </li>
+              <li class="shop-brand-item" data-id="${item.id}">
+                <input class="input-brand" id="price-${item.id}" type="checkbox" />
+                <label for="price-${item.id}">Từ 1 - 2 triệu</label>
+              </li>
+              <li class="shop-brand-item" data-id="${item.id}">
+                <input class="input-brand" id="price-${item.id}" type="checkbox" />
+                <label for="price-${item.id}">Từ 5 - 10 triệu</label>
+              </li>
+              <li class="shop-brand-item" data-id="${item.id}">
+                <input class="input-brand" id="price-${item.id}" type="checkbox" />
+                <label for="price-${item.id}">Từ 10 - 50 triệu</label>
+              </li>
+              <li class="shop-brand-item" data-id="${item.id}">
+                <input class="input-brand" id="price-${item.id}" type="checkbox" />
+                <label for="price-${item.id}">Trên 100 triệu</label>
+              </li> --}}
 
+            </ul>
+            <div class="slicer">
+              <div class="progress"></div>
+            </div>
+            <div class="range-input">
+              <input type="range" class="range-min" min="0" max="1000" value="0" step="100" />
+              <input type="range" class="range-max" min="0" max="1000" value="1000" step="100" />
+            </div>
+            <div class="price-input">
+              <span>Giá:</span>
+              <div class="field">
+                <input name="min" type="number" class="input-min" value="0" />
               </div>
-              <div>
-                <div class="shop-filter-price-btn">
-                  <button type="submit" name="filter-price" class="custom-btn btn-3">
-                    <span>Filter</span>
-                  </button>
-                </div>
+              <div class="separator">—</div>
+              <div class="field">
+                <input name="max" type="number" class="input-max" value="999" />
               </div>
-            </form>
+              nghìn
+            </div>
+            <div>
+              <div class="shop-filter-price-btn">
+                <button type="submit" name="filter-price" class="custom-btn btn-3">
+                  <span>Filter</span>
+                </button>
+              </div>
+            </div>
           </div>
 
           <!-- Brand -->
           <div class="shop-brand">
-            <h3 class="shop-title main">Brand</h3>
+            <h3 class="shop-title main">Thương hiệu</h3>
             <ul class="shop-brand__list">
+              {{#each brands}}
               <li>
-                <a href="#">
-                  <input id="1" type="checkbox" />
-                  <label for="1">Bridgestone</label>
+                <a href="/shop/brand/{{this.slug}}">
+                  <input id="{{this.id_brand}}" type="checkbox" />
+                  <label for="{{this.id_brand}}">{{this.name}}</label>
                   <span>(2)</span>
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <input id="1" type="checkbox" />
-                  <label for="1">Bridgestone</label>
-                  <span>(2)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <input id="1" type="checkbox" />
-                  <label for="1">Bridgestone</label>
-                  <span>(2)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <input id="1" type="checkbox" />
-                  <label for="1">Bridgestone</label>
-                  <span>(2)</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <input id="1" type="checkbox" />
-                  <label for="1">Bridgestone</label>
-                  <span>(2)</span>
-                </a>
-              </li>
+              {{/each}}
               <div>
-                <div class="shop-filter-price-btn">
-                  <button type="submit" name="filter-price" class="custom-btn btn-3">
-                    <span>Filter</span>
-                  </button>
-                </div>
+                <button type="submit" name="filter-price" class="shop-filter-brand-btn custom-btn btn-3">
+                  <span>Filter</span>
+                </button>
               </div>
             </ul>
           </div>
@@ -118,14 +113,14 @@
           <!-- s1 -->
           <div class="shop-main__s1">
             <select class="shop-select">
-              <option value="">Default sorting</option>
+              <option value="">Sắp xếp theo mặc định</option>
               <option value="">Sort by popularity</option>
               <option value="">Sort by average rating</option>
               <option value="">Sort by latest</option>
               <option value="">Sort by price: low to high</option>
               <option value="">Sort by price: high to low</option>
             </select>
-            <p class="shop-s1__result">Showing 1–12 of 95 results</p>
+            <p class="shop-s1__result">Hiển thị 1–12 của95 kết quả</p>
           </div>
 
           <!-- s2 -->
@@ -161,15 +156,15 @@
             <div class="shop-s3__space"></div>
             <div class="shop-s3__inner">
               <div class="shop-s3__content">
-                <p class="shop-s3__sub-title">One time special deals</p>
+                <p class="shop-s3__sub-title">Ưu đãi đặc biệt 1 lần</p>
                 <h3 class="shop-s3__title">
-                  MOST
-                  <span>ESSENTIALS</span>
+                  THIẾT YẾU
+                  <span>NHẤT</span>
                 </h3>
               </div>
               <div class="shop-s3__btn">
                 <button class="custom-btn btn-3">
-                  <span>SEE DETAILS</span>
+                  <span>XEM CHI TIẾT</span>
                 </button>
               </div>
             </div>
@@ -179,16 +174,17 @@
           <!-- Products -->
           <div class="shop-products">
             <div class="row">
+              {{#each products}}
               <div class="col l-4">
                 <div class="product">
-                  <a href="product/" class="product-wrap-img">
-                    <img class="product-img" src="/image/products/c1.jpg" />
+                  <a href="/product/{{this.slug}}" class="product-wrap-img">
+                    <img class="product-img" src="/image/products/{{this.image}}" />
                     <!-- hide -->
                     <div class="product-wrap-view">
-                      Quick view
+                      Xem nhanh
                     </div>
                     <div class="product-wrap-sale">
-                      20%
+                      {{discountPrice this.price this.promotion}}
                     </div>
                     <div class="product-wrap__icon">
                       <span><i class="fa-thin fa-heart"></i></span>
@@ -198,23 +194,19 @@
 
                   <div class="product-info">
                     <div class="product-info__border hide-on-mobile"></div>
-                    <a href="./product/" class="product-info__name">
-                      Lorem ipsum, dolor sit amet consectetur
+                    <a href="/product/{{this.slug}}" class="product-info__name">
+                      {{this.name}}
                     </a>
                     <div class="product-info__star">
-                      <i class="fa-solid fa-star-sharp"></i>
-                      <i class="fa-solid fa-star-sharp"></i>
-                      <i class="fa-solid fa-star-sharp"></i>
-                      <i class="fa-solid fa-star-sharp"></i>
-                      <i class="fa-regular fa-star-sharp"></i>
+                      {{{renderRating this.star}}}
                     </div>
                     <div class="product-info__wrap-price">
-                      <del class="product-info__priceold">
-                        $20.00
-                      </del>
                       <div class="product-info__price">
-                        $20.00
+                        {{formatVND this.price}}
                       </div>
+                      <del class="product-info__priceold">
+                        {{formatVND this.promotion}}
+                      </del>
                     </div>
                     <div class="product-info__btn">
                       Add to cart
@@ -222,6 +214,7 @@
                   </div>
                 </div>
               </div>
+              {{/each}}
             </div>
           </div>
 

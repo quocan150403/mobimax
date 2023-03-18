@@ -6,7 +6,7 @@
         <div class="product-detail__wrap-img">
           <div class="slider-for">
             <div>
-              <img src="/image/products/product2.jpg" />
+              <img src="/image/products/{{product.image}}" />
             </div>
             {{! <div>
               <img src="/image/products/product2.jpg" alt="" />
@@ -45,38 +45,36 @@
       <div class="col l-6 m-12 c-12">
         <div class="product-content product-detail__info">
           <h2 class="product-content__name">
-            Name
+            {{product.name}}
           </h2>
           <div class="product-content__wrap-price">
-            <p class="product-content__price-old">
-              $30.00
-            </p>
             <h2 class="product-content__price">
-              $20.00
+              {{formatVND product.price}}
             </h2>
+            <del class="product-content__price-old">
+              {{formatVND product.promotion}}
+            </del>
           </div>
           <div class="product-content__star">
-
-            <i class="fa-solid fa-star-sharp"></i>
-            <i class="fa-regular fa-star-sharp"></i>
+            {{{renderRating product.star}}}
           </div>
           <p class="product-content__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore</p>
-          <div class="product-content__amount">33 in stock</div>
+          <div class="product-content__amount">{{product.quantity}} sản phẩm trong kho</div>
           <form action="" class="product-content__form">
             <input value="1" type="number" />
             <div class="product-content__btn">
               <button class="custom-btn btn-3">
-                <span>ADD TO CART</span>
+                <span>Thêm vào giỏ hàng</span>
               </button>
             </div>
           </form>
           <div class="product-content__text">
-            Categories:
+            Danh mục:
             <span>GPS Systems, Lighting</span>
           </div>
           <div class="product-content__text">
-            Categories:
+            Thương hiệu:
             <span>Hella, KOITO, Magneti Marelli, OSRAM, Valeo</span>
           </div>
 
@@ -115,9 +113,9 @@
       <div class="col l-12 m-12 c-12">
         <!-- Tab items -->
         <div class="tabs">
-          <div class="tab-item">Description</div>
-          <div class="tab-item">Additional Info</div>
-          <div class="tab-item active">Review (4)</div>
+          <div class="tab-item">Mô tả</div>
+          <div class="tab-item">Thông tin bổ sung</div>
+          <div class="tab-item active">Đánh giá (4)</div>
           <div class="line"></div>
         </div>
 
@@ -125,39 +123,30 @@
         <div class="tab-content">
           <div class="tab-pane">
             <p>
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-              Latin literature from 45 BC, making it over 2000 years old. Vivamus bibendum magna Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit.Contrary to popular belief, Lorem Ipsum is not simply random text. It
-              has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-            </p>
-            <p>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-              atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-              sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
-              facilis est et expedita distinctio.
+              Trái với suy nghĩ của nhiều người, Lorem Ipsum không chỉ đơn giản là văn bản ngẫu nhiên. Nó có nguồn gốc
+              từ một tác phẩm cổ điển Văn học Latinh từ năm 45 trước Công nguyên, làm cho nó hơn 2000 năm tuổi. Vivamus
+              bibendum magna Lorem ipsum dolor ngồi amet, consectetur adipiscing elit. Trái với suy nghĩ của nhiều
+              người, Lorem Ipsum không chỉ đơn giản là văn bản ngẫu nhiên. Nó có nguồn gốc từ một tác phẩm văn học
+              Latinh cổ điển từ năm 45 trước Công nguyên, khiến nó có tuổi đời hơn 2000 năm.
             </p>
           </div>
           <div class="tab-pane">
             <table>
               <tr>
-                <td>Style</td>
-                <td>Modern</td>
+                <td>Màu sắc</td>
+                <td>Xám trắng</td>
               </tr>
               <tr>
-                <td>Brand</td>
-                <td>Ingrid Lauritz</td>
-              </tr>
-              <tr>
-                <td>Weight</td>
+                <td>Trọng lượng</td>
                 <td>2kg</td>
               </tr>
               <tr>
-                <td>Height</td>
+                <td>Chiều cao</td>
                 <td>74,4cm</td>
               </tr>
               <tr>
-                <td>Warranty</td>
-                <td>2 years</td>
+                <td>Bảo hành</td>
+                <td>2 năm</td>
               </tr>
             </table>
           </div>
@@ -166,8 +155,8 @@
             <div class="review">
               <img class="review-img" src="/image/others/testimonial-1.jpg" alt="" />
               <div class="review-info">
-                <h2 class="review-info__name">Alea Brooks</h2>
-                <p class="review-info__date">March 5, 2018</p>
+                <h2 class="review-info__name">Quốc An</h2>
+                <p class="review-info__date">16-03-2022</p>
                 <p class="review-info__content hide-on-mobile">
                   Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
                   nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
@@ -196,7 +185,7 @@
 
             <div class="comment">
               <form action="" class="form-comment" method="POST" id="form-comment">
-                <h2 class="comment-heading">Add a review</h2>
+                <h2 class="comment-heading">Hãy viết đánh giá của bạn</h2>
                 <div class="comment-rating">
                   <i data-id="1" class="rating-js fa-regular fa-star"></i>
                   <i data-id="2" class="rating-js fa-regular fa-star"></i>
@@ -209,40 +198,16 @@
 
                 <div class="form-group">
                   <div class="input-group">
-                    <textarea
-                      id="review"
-                      placeholder="Your review *"
-                      class="form-control form-textarea"
-                      cols="30"
-                      rows="7"
-                    ></textarea>
+                    <textarea id="review" placeholder="Nội dung đánh giá *" class="form-control form-textarea" cols="30"
+                      rows="7"></textarea>
                     <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
                   </div>
                   <span class="form-message"></span>
                 </div>
 
-                <div class="comment-group">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <input id="name" placeholder="Your name *" name="name" type="text" class="form-control" />
-                      <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
-                    </div>
-                    <span class="form-message"></span>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="input-group">
-                      <input id="email" placeholder="Your email *" name="email" type="text" class="form-control" />
-                      <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
-                    </div>
-                    <span class="form-message"></span>
-                  </div>
-
-                </div>
-
                 <div class="btn-comment">
                   <button class="custom-btn btn-3">
-                    <span>Submit Review</span>
+                    <span>Gửi Đánh Giá</span>
                   </button>
                 </div>
 
@@ -258,7 +223,7 @@
 
 <section class="product-related pd">
   <div class="grid wide">
-    <h2 class="title">Related products</h2>
+    <h2 class="title">Sản phẩm liên quan</h2>
 
     <div class="custom-arrow-slick-prev product-related-arrow-slick-prev">
       <i class="fa-solid fa-chevron-left"></i>
@@ -267,15 +232,48 @@
       <i class="fa-solid fa-chevron-right"></i>
     </div>
 
-    <div class="product-related-slick">
+    <div class="row">
+      {{#each relatedProducts}}
+      <div class="col l-3">
+        <div class="product">
+          <a href="/product/{{this.slug}}" class="product-wrap-img">
+            <img class="product-img" src="/image/products/{{this.image}}" />
+            <!-- hide -->
+            <div class="product-wrap-view">
+              Xem nhanh
+            </div>
+            <div class="product-wrap-sale">
+              {{discountPrice this.price this.promotion}}
+            </div>
+            <div class="product-wrap__icon">
+              <span><i class="fa-thin fa-heart"></i></span>
+              <span><i class="fa-thin fa-arrows-rotate"></i></span>
+            </div>
+          </a>
 
+          <div class="product-info">
+            <div class="product-info__border hide-on-mobile"></div>
+            <a href="/product/{{this.slug}}" class="product-info__name">
+              {{this.name}}
+            </a>
+            <div class="product-info__star">
+              {{{renderRating this.star}}}
+            </div>
+            <div class="product-info__wrap-price">
+              <div class="product-info__price">
+                {{formatVND this.price}}
+              </div>
+              <del class="product-info__priceold">
+                {{formatVND this.promotion}}
+              </del>
+            </div>
+            <div class="product-info__btn">
+              Add to cart
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
     </div>
   </div>
 </section>
-<script src="/libs/validator.js"></script>
-
-<script>
-  // Mong muốn của chúng ta Validator({ form: '#form-comment', formGroupSelector: '.form-group', errorSelector:
-  '.form-message', rules: [ Validator.isRequired('#review'), Validator.isRequired('#name'), Validator.isEmail('#email'),
-  ] });
-</script>

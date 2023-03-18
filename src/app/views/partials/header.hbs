@@ -54,7 +54,7 @@
   <!-- Header bot (logo, search, actions) -->
   <div class="grid wide pd">
     <div class="header-bot">
-      <a href="./" class="header-bot__logo hide-on-mobile-tablet">
+      <a href="/" class="header-bot__logo hide-on-mobile-tablet">
         <img src="/image/logo.png" alt="Mobimax">
       </a>
 
@@ -147,32 +147,42 @@
           <div class="header-nav__category">
             Danh mục sản phẩm
             <i class="fa-light fa-angle-down"></i>
+            <ul id="header-categories" class="header-category__box">
+              {{#each categories}}
+              <li>
+                <a href="">
+                  <span>{{this.name}}</span>
+                  <span><i class="fa-solid fa-chevron-right"></i></span>
+                </a>
+              </li>
+              {{/each}}
+            </ul>
           </div>
 
           <nav>
             <ul class="header-main__list">
               <li class="header-main__item">
-                <a class="header-main__link" href="./">
+                <a class="header-main__link" href="/">
                   Trang chủ
                 </a>
               </li>
               <li class="header-main__item">
-                <a class="header-main__link" href="./shop">
+                <a class="header-main__link" href="/shop">
                   Cửa hàng
                 </a>
               </li>
               <li class="header-main__item">
-                <a class="header-main__link" href="./about">
+                <a class="header-main__link" href="/about">
                   Chúng tôi
                 </a>
               </li>
               <li class="header-main__item">
-                <a class="header-main__link" href="./contact">
+                <a class="header-main__link" href="/contact">
                   Liên hệ
                 </a>
               </li>
               <li class="header-main__item">
-                <a class="header-main__link" href="./faq">
+                <a class="header-main__link" href="/faq">
                   FAQ
                 </a>
               </li>
@@ -205,12 +215,12 @@
 
         <ul class="header-other-tablet-mobile">
           <li>
-            <a href="./cart">
+            <a href="/cart">
               <i class="fa-light fa-cart-shopping"></i>
             </a>
           </li>
           <li>
-            <a href="./login">
+            <a href="/login">
               <i class="fa-light fa-user"></i>
             </a>
           </li>
@@ -231,27 +241,27 @@
     </div>
     <ul class="sidebar-nav">
       <li>
-        <a href="./">
+        <a href="/">
           Trang chủ
         </a>
       </li>
       <li>
-        <a href="./shop">
+        <a href="/shop">
           Cửa hàng
         </a>
       </li>
       <li>
-        <a href="./about">
+        <a href="/about">
           Về Mobimax
         </a>
       </li>
       <li>
-        <a href="./contact">
+        <a href="/contact">
           Liên hệ
         </a>
       </li>
       <li>
-        <a href="./faq">
+        <a href="/faq">
           FAQ
         </a>
       </li>

@@ -3,15 +3,15 @@
     <div class="row">
       <div class="col l-12 m-12 c-12">
         <div class="checkout-code">
-          <p>Have a coupon?
-            <span class="checkout-code-toggle">Click here to enter your code</span>
+          <p>Bạn có phiếu giảm giá?
+            <span class="checkout-code-toggle">Nhấp vào đây để nhập mã của bạn</span>
           </p>
           <div class="checkout-code__inner">
-            <h6>If you have a coupon code, please apply it below.</h6>
-            <input type="text" placeholder="Coupon code" class="input-main" />
+            <h6>Nếu bạn có mã phiếu giảm giá, vui lòng áp dụng nó bên dưới..</h6>
+            <input type="text" placeholder="Mã giảm giá" class="input-main" />
             <div class="checkout-code__btn">
               <button class="custom-btn btn-3">
-                <span>APPLY COUPON</span>
+                <span>Áp dụng</span>
               </button>
             </div>
           </div>
@@ -24,11 +24,11 @@
         <div class="col l-6 m-12 c-12">
           <div class="checkout-info">
             <h2 class="checkout-title">
-              Billing details
+              Địa chỉ
             </h2>
 
             <div class="form-group">
-              <label for="lastname" class="form-label">Name *</label>
+              <label for="lastname" class="form-label">Tên *</label>
               <div class="input-group">
                 <input id="lastname" name="lastname" type="text" class="form-control" />
                 <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
@@ -37,7 +37,7 @@
             </div>
 
             <div class="form-group">
-              <label for="phone" class="form-label">Phone *</label>
+              <label for="phone" class="form-label">Số điện thoại *</label>
               <div class="input-group">
                 <input id="phone" name="phone" type="text" class="form-control" />
                 <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
@@ -46,7 +46,7 @@
             </div>
 
             <div class="form-group">
-              <label for="street" class="form-label">Address *</label>
+              <label for="street" class="form-label">Địa chỉ *</label>
               <div class="input-group">
                 <input id="street" name="street" type="text" class="form-control" />
                 <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
@@ -55,7 +55,7 @@
             </div>
 
             <div class="form-group">
-              <label for="email" class="form-label">Email address *</label>
+              <label for="email" class="form-label">Email *</label>
               <div class="input-group">
                 <input id="email" name="email" type="text" class="form-control" />
                 <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
@@ -65,18 +65,13 @@
 
             <div class="checkout-notes">
               <h2 class="checkout-title">
-                Additional information
+                Thông tin bổ sung
               </h2>
               <div class="form-group">
-                <label for="notes" class="form-label">Order notes (optional)</label>
+                <label for="notes" class="form-label">Ghi chú đơn hàng</label>
                 <div class="input-group">
-                  <textarea
-                    id="notes"
-                    placeholder="Notes about your order,e.g special notes for delivery"
-                    class="form-control form-textarea"
-                    cols="30"
-                    rows="5"
-                  ></textarea>
+                  <textarea id="notes" placeholder="Ghi chú thêm" class="form-control form-textarea" cols="30"
+                    rows="5"></textarea>
                   <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
                 </div>
                 <span class="form-message"></span>
@@ -89,13 +84,13 @@
         <div class="col l-6 m-12 c-12">
           <div class="checkout-order">
             <h2 class="checkout-title">
-              Your order
+              Đơn hàng của bạn
             </h2>
 
             <table class="checkout-table" border="1">
               <tr>
-                <th class="checkout-table-bg">Product</th>
-                <th class="checkout-table-bg">Subtotal</th>
+                <th class="checkout-table-bg">Sản phẩm</th>
+                <th class="checkout-table-bg">Giá</th>
               </tr>
 
               <tr>
@@ -108,11 +103,11 @@
                 <td>$183.44</td>
               </tr>
               <tr>
-                <th class="checkout-table-bg">Subtotal</th>
+                <th class="checkout-table-bg">Tổng phụ</th>
                 <td>$229.21</td>
               </tr>
               <tr>
-                <th class="checkout-table-bg">Total</th>
+                <th class="checkout-table-bg">Tổng tiền</th>
                 <td>
                   <span class="checkout-bold">
                     $229.21
@@ -122,24 +117,24 @@
             </table>
             <div class="checkout-payment">
               <h2 class="checkout-title">
-                Payment
+                Thanh toán
               </h2>
 
               <div class="form-group">
                 <div class="payment">
                   <input name="payment" checked type="radio" id="cash" value="0" class="form-control" />
-                  <label for="cash">Cash payment</label>
+                  <label for="cash">Tiền mặt</label>
                 </div>
                 <div class="payment">
                   <input name="payment" id="paypal" type="radio" value="1" class="form-control" />
-                  <label for="paypal">Paypal</label>
+                  <label for="paypal">Online</label>
                 </div>
                 <span class="form-message"></span>
               </div>
 
               <div class="checkout-btn">
                 <button type="submit" class="custom-btn btn-3">
-                  <span>PLACE ORDER</span>
+                  <span>Đặc hàng</span>
                 </button>
               </div>
 
@@ -155,7 +150,7 @@
 
 <script>
   // Mong muốn của chúng ta Validator({ form: '#form-checkout', formGroupSelector: '.form-group', errorSelector:
-  '.form-message', rules: [ Validator.isRequired('#firstname'), Validator.isRequired('#lastname'), //
+  '.form-message', rules: [Validator.isRequired('#firstname'), Validator.isRequired('#lastname'), //
   Validator.isRequired('#company'), Validator.isRequired('#country'), Validator.isRequired('#street'),
   Validator.isRequired('#town'), Validator.isRequired('#town'), // Validator.isRequired('#county'),
   Validator.isRequired('#postcode'), Validator.isRequired('#phone'), Validator.isEmail('#email'),

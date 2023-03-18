@@ -3,3 +3,4 @@
 node_modules/
 src/public/css/app.css
 src/public/admin/
+.env
