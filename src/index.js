@@ -1,8 +1,7 @@
 const express = require('express');
-const path = require('path');
 const { engine } = require('express-handlebars');
 const route = require('./routes');
-
+const path = require('path');
 const app = express();
 
 // Static files
@@ -28,7 +27,23 @@ app.engine(
       },
       // Format date
       formatDate: (date) => {
-        return new Intl.DateTimeFormat('vi-VN').format(date);
+        const now = new Date();
+        const diff = now.getTime() - new Date(date).getTime();
+        const diffSeconds = Math.floor(diff / 1000);
+        const diffMinutes = Math.floor(diff / (1000 * 60));
+        const diffHours = Math.floor(diff / (1000 * 3600));
+        const diffDays = Math.floor(diff / (1000 * 3600 * 24));
+        const diffWeeks = Math.floor(diff / (1000 * 3600 * 24 * 7));
+        const diffMonths = Math.floor(diff / (1000 * 3600 * 24 * 30));
+        const diffYears = Math.floor(diff / (1000 * 3600 * 24 * 365));
+        if (diffYears > 0) return `${diffYears} năm trước`;
+        if (diffMonths > 0) return `${diffMonths} tháng trước`;
+        if (diffWeeks > 0) return `${diffWeeks} tuần trước`;
+        if (diffDays > 0) return `${diffDays} ngày trước`;
+        if (diffHours > 0) return `${diffHours} giờ trước`;
+        if (diffMinutes > 0) return `${diffMinutes} phút trước`;
+        if (diffSeconds > 0) return `${diffSeconds} giây trước`;
+        else return 'Vừa xong';
       },
       // Calculate discount price
       discountPrice: (price, priceOld) => {
@@ -47,13 +62,9 @@ app.engine(
         }
         return result;
       },
-      // Active shop
-      activeShop: (a, b) => {
-        if (a === b) {
-          return 'active';
-        } else {
-          return '';
-        }
+      // Check length of array
+      checkArray: (array) => {
+        return array.length > 0;
       },
     },
   }),

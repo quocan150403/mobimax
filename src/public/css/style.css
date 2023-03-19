@@ -3824,7 +3824,7 @@ input[name='payment'] {
 .review-info__star-box {
   position: absolute;
   font-size: 1.6rem;
-  color: var(--secondary-color);
+  color: #dddd;
   right: 0;
   top: 30px;
 }
@@ -3842,7 +3842,10 @@ input[name='payment'] {
 .comment-rating {
   font-size: 2rem;
   color: var(--secondary-color);
-  margin-bottom: 24px;
+  margin-bottom: 6px;
+}
+.comment-rating i {
+  cursor: pointer;
 }
 
 .comment-content {
@@ -3858,9 +3861,6 @@ input[name='payment'] {
 .form-comment .form-group {
   width: 100%;
   margin-right: 0;
-}
-.form-comment .form-group + .form-group {
-  margin-left: 16px;
 }
 
 .comment-group {
@@ -3879,7 +3879,16 @@ input[name='payment'] {
   color: var(--text-color);
   letter-spacing: 1px;
 }
-
+.no-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.no-comment p {
+  margin: 0;
+  margin-top: 10px;
+}
 .btn-comment {
   width: 150px;
   height: 50px;

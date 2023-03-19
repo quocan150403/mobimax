@@ -15,7 +15,7 @@
             <ul class="shop-category__list">
               {{#each categories}}
               <li>
-                <a {{activeShop}} href="/shop/category/{{this.slug}}">
+                <a href="/shop/category/{{this.slug}}">
                   {{this.name}}
                   <i class="fa-regular fa-angle-right"></i>
                 </a>
@@ -114,13 +114,12 @@
           <div class="shop-main__s1">
             <select class="shop-select">
               <option value="">Sắp xếp theo mặc định</option>
-              <option value="">Sort by popularity</option>
-              <option value="">Sort by average rating</option>
-              <option value="">Sort by latest</option>
-              <option value="">Sort by price: low to high</option>
-              <option value="">Sort by price: high to low</option>
+              <option value="">Sắp xếp giá từ cao đến thấp</option>
+              <option value="">Sắp xếp giá từ thấp đến cao</option>
+              <option value="">Sắp xếp theo sản phẩm bán chạy nhất</option>
+              <option value="">Sắp xếp theo sản phẩm được yêu thích nhất</option>
             </select>
-            <p class="shop-s1__result">Hiển thị 1–12 của95 kết quả</p>
+            <p class="shop-s1__result">Hiển thị 1–12 của 95 kết quả</p>
           </div>
 
           <!-- s2 -->
@@ -175,7 +174,7 @@
           <div class="shop-products">
             <div class="row">
               {{#each products}}
-              <div class="col l-4">
+              <div class="col l-4 m-6 c-6">
                 <div class="product">
                   <a href="/product/{{this.slug}}" class="product-wrap-img">
                     <img class="product-img" src="/image/products/{{this.image}}" />
@@ -198,7 +197,7 @@
                       {{this.name}}
                     </a>
                     <div class="product-info__star">
-                      {{{renderRating this.star}}}
+                      {{{renderRating this.rating}}}
                     </div>
                     <div class="product-info__wrap-price">
                       <div class="product-info__price">

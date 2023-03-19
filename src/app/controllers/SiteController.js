@@ -17,13 +17,6 @@ class SiteController {
       categories,
       brands,
     });
-    res.render('client/home', {
-      sold,
-      view,
-      newProduct,
-      categories,
-      brands,
-    });
     // ProductModel.findByType('sold', (err, sold) => {
     //   ProductModel.findByType('view', (err, view) => {
     //     ProductModel.findByType('created_at', (err, newProduct) => {
@@ -44,58 +37,76 @@ class SiteController {
   }
 
   // [GET] /about
-  about(req, res, next) {
-    res.render('client/about');
+  async about(req, res, next) {
+    const categories = await CategoryModel.find();
+    res.render('client/about', { categories });
   }
 
   // [GET] /cart
-  cart(req, res, next) {
-    res.render('client/cart');
+  async cart(req, res, next) {
+    const categories = await CategoryModel.find();
+    res.render('client/cart', { categories });
   }
 
   // [GET] /checkout
-  checkout(req, res, next) {
-    res.render('client/checkout');
+  async checkout(req, res, next) {
+    const categories = await CategoryModel.find();
+
+    res.render('client/checkout', { categories });
   }
 
   // [GET] /contact
-  contact(req, res, next) {
-    res.render('client/contact');
+  async contact(req, res, next) {
+    const categories = await CategoryModel.find();
+
+    res.render('client/contact', { categories });
   }
 
   // [GET] /faq
-  faq(req, res, next) {
-    res.render('client/faq');
+  async faq(req, res, next) {
+    const categories = await CategoryModel.find();
+
+    res.render('client/faq', { categories });
   }
 
   // [GET] /register
-  register(req, res, next) {
-    res.render('client/register');
+  async register(req, res, next) {
+    const categories = await CategoryModel.find();
+
+    res.render('client/register', { categories });
   }
 
   // [GET] /login
-  login(req, res, next) {
-    res.render('client/login');
+  async login(req, res, next) {
+    const categories = await CategoryModel.find();
+
+    res.render('client/login', { categories });
   }
 
   // [GET] /resister
-  resister(req, res, next) {
-    res.render('client/resister');
+  async resister(req, res, next) {
+    const categories = await CategoryModel.find();
+
+    res.render('client/resister', { categories });
   }
 
   // [GET] /orders
-  orders(req, res, next) {
-    res.render('client/order/list');
+  async orders(req, res, next) {
+    const categories = await CategoryModel.find();
+
+    res.render('client/order/list', { categories });
   }
 
   // [GET] /order
-  order(req, res, next) {
-    res.render('client/order/detail');
+  async order(req, res, next) {
+    const categories = await CategoryModel.find();
+    res.render('client/order/detail', { categories });
   }
 
   // [GET] /wishlist
-  wishlist(req, res, next) {
-    res.render('client/wishlist');
+  async wishlist(req, res, next) {
+    const categories = await CategoryModel.find();
+    res.render('client/wishlist', { categories });
   }
 
   // [GET] /notpage

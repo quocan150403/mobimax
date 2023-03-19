@@ -55,11 +55,10 @@
               {{formatVND product.promotion}}
             </del>
           </div>
+          <p class="product-content__description">{{product.title}}</p>
           <div class="product-content__star">
             {{{renderRating product.star}}}
           </div>
-          <p class="product-content__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore</p>
           <div class="product-content__amount">{{product.quantity}} sản phẩm trong kho</div>
           <form action="" class="product-content__form">
             <input value="1" type="number" />
@@ -71,11 +70,11 @@
           </form>
           <div class="product-content__text">
             Danh mục:
-            <span>GPS Systems, Lighting</span>
+            <span>{{product.name_category}}</span>
           </div>
           <div class="product-content__text">
             Thương hiệu:
-            <span>Hella, KOITO, Magneti Marelli, OSRAM, Valeo</span>
+            <span>{{product.name_brand}}</span>
           </div>
 
           <ul class="product-content__social">
@@ -115,20 +114,14 @@
         <div class="tabs">
           <div class="tab-item">Mô tả</div>
           <div class="tab-item">Thông tin bổ sung</div>
-          <div class="tab-item active">Đánh giá (4)</div>
+          <div class="tab-item active">Đánh giá ({{product.count_comment}})</div>
           <div class="line"></div>
         </div>
 
         <!-- Tab content -->
         <div class="tab-content">
           <div class="tab-pane">
-            <p>
-              Trái với suy nghĩ của nhiều người, Lorem Ipsum không chỉ đơn giản là văn bản ngẫu nhiên. Nó có nguồn gốc
-              từ một tác phẩm cổ điển Văn học Latinh từ năm 45 trước Công nguyên, làm cho nó hơn 2000 năm tuổi. Vivamus
-              bibendum magna Lorem ipsum dolor ngồi amet, consectetur adipiscing elit. Trái với suy nghĩ của nhiều
-              người, Lorem Ipsum không chỉ đơn giản là văn bản ngẫu nhiên. Nó có nguồn gốc từ một tác phẩm văn học
-              Latinh cổ điển từ năm 45 trước Công nguyên, khiến nó có tuổi đời hơn 2000 năm.
-            </p>
+            <p>{{product.description}}</p>
           </div>
           <div class="tab-pane">
             <table>
@@ -152,39 +145,34 @@
           </div>
 
           <div class="tab-pane active">
+            {{#if comments}}
+            {{#each comments}}
             <div class="review">
-              <img class="review-img" src="/image/others/testimonial-1.jpg" alt="" />
+              <img class="review-img" src="/image/others/avatar.jpg" alt="" />
               <div class="review-info">
-                <h2 class="review-info__name">Quốc An</h2>
-                <p class="review-info__date">16-03-2022</p>
-                <p class="review-info__content hide-on-mobile">
-                  Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-                  nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
-                </p>
+                <h2 class="review-info__name">{{this.name_user}}</h2>
+                <p class="review-info__date">{{formatDate this.created_at}}</p>
+                <p class="review-info__content hide-on-mobile">{{this.content}}</p>
                 <div class="review-info__star-box hide-on-tablet hide-on-pc">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
+                  {{{renderRating this.rating}}}
                 </div>
               </div>
 
               <div class="review-info__star-box hide-on-mobile">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+                {{{renderRating this.rating}}}
               </div>
             </div>
-            <p class="review-info__content hide-on-tablet hide-on-pc">
-              Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi
-              elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
-            </p>
+            {{/each}}
+            {{else}}
+            <div class="no-comment">
+              <img src="/image/others/no-comment.png" alt="" />
+              <p>Chưa có đánh giá nào</p>
+            </div>
+            {{/if}}
+
 
             <div class="comment">
-              <form action="" class="form-comment" method="POST" id="form-comment">
+              <form action="/product/post-comment/{{product.id}}" class="form-comment" method="POST" id="form-comment">
                 <h2 class="comment-heading">Hãy viết đánh giá của bạn</h2>
                 <div class="comment-rating">
                   <i data-id="1" class="rating-js fa-regular fa-star"></i>
@@ -193,13 +181,17 @@
                   <i data-id="4" class="rating-js fa-regular fa-star"></i>
                   <i data-id="5" class="rating-js fa-regular fa-star"></i>
                 </div>
-
-                <input type="number" hidden value="0" class="input-rating" name="rating" />
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="number" hidden id="rating" class="input-rating" name="rating" />
+                  </div>
+                  <span class="form-message"></span>
+                </div>
 
                 <div class="form-group">
                   <div class="input-group">
-                    <textarea id="review" placeholder="Nội dung đánh giá *" class="form-control form-textarea" cols="30"
-                      rows="7"></textarea>
+                    <textarea name="content" id="comment" placeholder="Nội dung đánh giá *"
+                      class="form-control form-textarea" cols="30" rows="7"></textarea>
                     <span class="iconError"><i class="fa-solid fa-triangle-exclamation"></i></span>
                   </div>
                   <span class="form-message"></span>
@@ -257,7 +249,7 @@
               {{this.name}}
             </a>
             <div class="product-info__star">
-              {{{renderRating this.star}}}
+              {{{renderRating this.rating}}}
             </div>
             <div class="product-info__wrap-price">
               <div class="product-info__price">
@@ -277,3 +269,29 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Handle click star and assign to input
+    $('.rating-js').click(function () {
+      $('.rating-js').removeClass('fa-solid').addClass('fa-regular');
+      $('.rating-js').each((index, element) => {
+        if ($(element).attr('data-id') <= $(this).attr('data-id')) {
+          $(element).removeClass('fa-regular').addClass('fa-solid');
+        }
+      });
+      $('.input-rating').val($(this).attr('data-id'));
+    })
+
+    // Handle validation from comment
+    Validator({
+      form: '#form-comment',
+      formGroupSelector: '.form-group',
+      errorSelector: '.form-message',
+      rules: [
+        Validator.isRequired('#rating', 'Vui lòng nhập chọn số sao đánh giá'),
+        Validator.isRequired('#comment', 'Vui lòng nhập nội dung đánh giá'),
+      ],
+    });
+  });
+</script>

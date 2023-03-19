@@ -1,34 +1,25 @@
+const BaseModel = require('./BaseModel');
 const { connection, query } = require('./helpers');
 
-class ProductModel {
+class ProductModel extends BaseModel {
   constructor() {
-    this.table = 'products';
+    super('products');
   }
 
-  async find() {
-    const sql = `SELECT * FROM ${this.table}`;
-    const conn = await connection().catch((err) => {
-      throw err;
-    });
-    const row = await query(conn, sql).catch((err) => {
-      throw err;
-    });
-    return row;
-  }
-
-  async findById(id) {
-    const sql = `SELECT * FROM ${this.table} WHERE id = ${id}`;
-    const conn = await connection().catch((err) => {
-      throw err;
-    });
-    const row = await query(conn, sql).catch((err) => {
-      throw err;
-    });
-    return row[0];
-  }
-
-  async findBySlug(slug) {
-    const sql = `SELECT * FROM ${this.table} WHERE slug = '${slug}'`;
+  async findBySlug(slug, all = false) {
+    let sql = `SELECT * FROM ${this.table} WHERE slug = '${slug}'`;
+    if (all) {
+      sql = `SELECT products.*, 
+            categories.name as name_category, 
+            brands.name as name_brand,
+            COUNT(comments.id) as count_comment,
+            AVG(comments.rating) as avg_rating
+              FROM ${this.table} products
+              JOIN categories ON products.id_category = categories.id
+              JOIN brands ON products.id_brand = brands.id
+              LEFT JOIN comments ON products.id = comments.id_product
+              GROUP BY products.slug HAVING products.slug = '${slug}' `;
+    }
     const conn = await connection().catch((err) => {
       throw err;
     });
@@ -71,48 +62,14 @@ class ProductModel {
     return row;
   }
 
-  async create(newData) {
-    const sql = `INSERT INTO ${this.table} SET ?`;
+  async updateViewAndRating(id, rating) {
+    const sql = `UPDATE ${this.table} SET view = view + 1, rating = ${rating} WHERE id = ${id}`;
     const conn = await connection().catch((err) => {
       throw err;
     });
-    const row = await query(conn, sql, newData).catch((err) => {
+    const result = query(conn, sql).catch((err) => {
       throw err;
     });
-    return { id: row.insertId, ...newData };
-  }
-
-  async update(id, newData) {
-    // const sql = 'UPDATE products SET ? WHERE id = ?';
-    // db.query(sql, [newData, id], (err, res) => {
-    //   if (err) throw err;
-    //   callback(null, { id, ...newData });
-    // });
-    const sql = `UPDATE ${this.table} SET ? WHERE id = ?`;
-    const conn = await connection().catch((err) => {
-      throw err;
-    });
-    await query(conn, sql, [newData, id]).catch((err) => {
-      throw err;
-    });
-    return { id, ...newData };
-  }
-
-  async delete(id) {
-    // const sql = 'DELETE FROM products WHERE id = ?';
-    // db.query(sql, [id], (err, res) => {
-    //   if (err) throw err;
-    //   callback(null, res);
-    // });
-    const sql = `DELETE FROM ${this.table} WHERE id = ?`;
-    const conn = await connection().catch((err) => {
-      throw err;
-    });
-    const result = await query(conn, sql, [id]).catch((err) => {
-      throw err;
-    });
-    return !!result.affectedRows;
   }
 }
-
 module.exports = new ProductModel();

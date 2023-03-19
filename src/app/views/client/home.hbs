@@ -300,7 +300,7 @@
           <div class="products-pane active">
             <div class="row">
               {{#each view}}
-              <div class="col l-4">
+              <div class="col l-4 m-6 c-12">
                 <div class="product">
                   <a href="/product/{{this.slug}}" class="product-wrap-img">
                     <img class="product-img" src="/image/products/{{this.image}}" />
@@ -323,7 +323,7 @@
                       {{this.name}}
                     </a>
                     <div class="product-info__star">
-                      {{{renderRating this.star}}}
+                      {{{renderRating this.rating}}}
                     </div>
                     <div class="product-info__wrap-price">
                       <div class="product-info__price">
@@ -347,7 +347,7 @@
           <div class="products-pane">
             <div class="row">
               {{#each sold}}
-              <div class="col l-4">
+              <div class="col l-4 m-6 c-12">
                 <div class="product">
                   <a href="/product/{{this.slug}}" class="product-wrap-img">
                     <img class="product-img" src="/image/products/{{this.image}}" />
@@ -370,7 +370,7 @@
                       {{this.name}}
                     </a>
                     <div class="product-info__star">
-                      {{{renderRating this.star}}}
+                      {{{renderRating this.rating}}}
                     </div>
                     <div class="product-info__wrap-price">
                       <div class="product-info__price">
@@ -393,7 +393,7 @@
           <div class="products-pane">
             <div class="row">
               {{#each newProduct}}
-              <div class="col l-4">
+              <div class="col l-4 m-6 c-12">
                 <div class="product">
                   <a href="/product/{{this.slug}}" class="product-wrap-img">
                     <img class="product-img" src="/image/products/{{this.image}}" />
@@ -416,7 +416,7 @@
                       {{this.name}}
                     </a>
                     <div class="product-info__star">
-                      {{{renderRating this.star}}}
+                      {{{renderRating this.rating}}}
                     </div>
                     <div class="product-info__wrap-price">
                       <div class="product-info__price">
