@@ -26,9 +26,10 @@ class ShopController {
       Product.findByIdCategory(idCategory)
         .then((products) => {
           res.render('client/shop', {
-            products,
             categories,
             brands,
+            products,
+            idCategory,
           });
         })
         .catch((err) => {

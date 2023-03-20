@@ -3,7 +3,6 @@ const router = express.Router();
 
 const siteController = require('../app/controllers/SiteController');
 
-router.get('/notpage', siteController.notpage);
 router.get('/wishlist', siteController.wishlist);
 router.get('/orders', siteController.orders);
 router.get('/order', siteController.order);

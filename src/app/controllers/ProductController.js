@@ -13,6 +13,7 @@ class ProductController {
     res.render('client/product', { product, relatedProducts, comments });
   }
 
+  // [POST] product/post-comment/:id
   async postComment(req, res, next) {
     const id_product = req.params.id;
     const data = req.body;

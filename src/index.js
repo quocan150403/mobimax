@@ -62,10 +62,8 @@ app.engine(
         }
         return result;
       },
-      // Check length of array
-      checkArray: (array) => {
-        return array.length > 0;
-      },
+      // Active menu
+      active: (a, b) => (a === b ? 'active' : ''),
     },
   }),
 );
