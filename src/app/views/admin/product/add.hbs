@@ -1,0 +1,134 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card-box">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h4 class="header-title m-t-0">Parsley Examples</h4>
+          <p class="text-muted font-13 m-b-10">
+            Parsley is a javascript form validation library. It helps you provide your users with feedback on their form
+            submission before sending it to your server.
+          </p>
+
+          <div class="alert alert-warning hidden fade in">
+            <h4>Oh snap!</h4>
+            <p>This form seems to be invalid :(</p>
+          </div>
+
+          <div class="alert alert-info hidden fade in">
+            <h4>Yay!</h4>
+            <p>Everything seems to be ok :)</p>
+          </div>
+
+          <form id="demo-form" data-parsley-validate="">
+            <div class="form-group">
+              <label for="fullname">Full Name * :</label>
+              <input type="text" class="form-control" name="fullname" id="fullname" required="">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email * :</label>
+              <input type="email" id="email" class="form-control" name="email" data-parsley-trigger="change"
+                required="">
+            </div>
+
+            <div class="form-group">
+              <label>Gender *:</label>
+
+              <div class="radio">
+                <input type="radio" name="gender" id="genderM" value="Male" required="">
+                <label for="genderM">
+                  Male
+                </label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="gender" id="genderF" value="Female">
+                <label for="genderF">
+                  Female
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Hobbies (Optional, but 2 minimum):</label>
+
+              <div class="checkbox checkbox-pink">
+                <input type="checkbox" name="hobbies[]" id="hobby1" value="ski" data-parsley-mincheck="2">
+                <label for="hobby1"> Skiing </label>
+              </div>
+              <div class="checkbox checkbox-pink">
+                <input type="checkbox" name="hobbies[]" id="hobby2" value="run">
+                <label for="hobby2"> Running </label>
+              </div>
+              <div class="checkbox checkbox-pink">
+                <input type="checkbox" name="hobbies[]" id="hobby3" value="eat">
+                <label for="hobby3"> Eating </label>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label for="heard">Heard about us via *:</label>
+              <select id="heard" class="form-control" required="">
+                <option value="">Choose..</option>
+                <option value="press">Press</option>
+                <option value="net">Internet</option>
+                <option value="mouth">Word of mouth</option>
+                <option value="other">Other..</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message (20 chars min, 100 max) :</label>
+              <textarea id="message" class="form-control" name="message" data-parsley-trigger="keyup"
+                data-parsley-minlength="20" data-parsley-maxlength="100"
+                data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                data-parsley-validation-threshold="10"></textarea>
+            </div>
+
+            <div class="form-group">
+              <input type="submit" class="btn btn-success" value="validate">
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div> <!-- end ard-box -->
+  </div><!-- end col-->
+
+</div>
+<!-- end row -->
+<script>
+  var resizefunc = [];
+</script>
+
+<!-- jQuery  -->
+<script src="/admin/resource/assets/js/jquery.min.js"></script>
+<script src="/admin/resource/assets/js/bootstrap.min.js"></script>
+<script src="/admin/resource/assets/js/detect.js"></script>
+<script src="/admin/resource/assets/js/fastclick.js"></script>
+<script src="/admin/resource/assets/js/jquery.blockUI.js"></script>
+<script src="/admin/resource/assets/js/waves.js"></script>
+<script src="/admin/resource/assets/js/jquery.slimscroll.js"></script>
+<script src="/admin/resource/assets/js/jquery.scrollTo.min.js"></script>
+<script src="/admin/plugins/switchery/switchery.min.js"></script>
+
+<script type="text/javascript" src="/admin/plugins/parsleyjs/parsley.min.js"></script>
+
+<!-- App js -->
+<script src="/admin/resource/assets/js/jquery.core.js"></script>
+<script src="/admin/resource/assets/js/jquery.app.js"></script>
+
+<script type="text/javascript">
+  $(function () {
+    $('#demo-form').parsley().on('field:validated', function () {
+      var ok = $('.parsley-error').length === 0;
+      $('.alert-info').toggleClass('hidden', !ok);
+      $('.alert-warning').toggleClass('hidden', ok);
+    })
+      .on('form:submit', function () {
+        return false; // Don't submit form for this demo
+      });
+  });
+</script>

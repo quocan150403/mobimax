@@ -1,64 +1,95 @@
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobimax</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+  <meta name="author" content="Coderthemes">
 
-    <!-- date range picker -->
-    <link href="/admin/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/admin/resource/assets/images/favicon.ico">
+  <!-- App title -->
+  <title>Mobimax</title>
 
-    <!-- App css -->
-    <link href="/admin/resource/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="/admin/resource/assets/css/core.css" rel="stylesheet" type="text/css" />
-    <link href="/admin/resource/assets/css/components.css" rel="stylesheet" type="text/css" />
-    <link href="/admin/resource/assets/css/icons.css" rel="stylesheet" type="text/css" />
-    <link href="/admin/resource/assets/css/pages.css" rel="stylesheet" type="text/css" />
-    <link href="/admin/resource/assets/css/menu.css" rel="stylesheet" type="text/css" />
-    <link href="/admin/resource/assets/css/responsive.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/admin/plugins/switchery/switchery.min.css" />
+  <!-- date range picker -->
+  <link href="/admin/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-    <script src="/admin/resource/assets/js/modernizr.min.js"></script>
-  </head>
+  <!-- Plugin Css-->
+  <link rel="stylesheet" href="/admin/plugins/magnific-popup/css/magnific-popup.css" />
+  <link rel="stylesheet" href="/admin/plugins/jquery-datatables-editable/datatables.css" />
 
-  <body class="fixed-left widescreen">
+  <!-- App css -->
+  <link href="/admin/resource/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="/admin/resource/assets/css/core.css" rel="stylesheet" type="text/css" />
+  <link href="/admin/resource/assets/css/components.css" rel="stylesheet" type="text/css" />
+  <link href="/admin/resource/assets/css/icons.css" rel="stylesheet" type="text/css" />
+  <link href="/admin/resource/assets/css/pages.css" rel="stylesheet" type="text/css" />
+  <link href="/admin/resource/assets/css/menu.css" rel="stylesheet" type="text/css" />
+  <link href="/admin/resource/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/admin/plugins/switchery/switchery.min.css">
 
-    <!-- Begin page -->
-    <div id="wrapper">
+  <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 
-      <!-- Top Bar Start -->
-      {{>admin-topbar}}
-      <!-- Top Bar End -->
+  <script src="/admin/resource/assets/js/modernizr.min.js"></script>
 
-      <!-- ========== Left Sidebar start ========== -->
+</head>
 
-            {{>admin-sidebar}}
-      <!-- ========== Left Sidebar end ========== -->
 
-      <!-- ========== main content start ========== -->
-      <div class="content-page">
+<body class="fixed-left">
 
-        <!-- content start -->
+  <!-- Begin page -->
+  <div id="wrapper">
+    <!-- Top Bar Start -->
+    {{>admin-topbar}}
+    <!-- Top Bar End -->
+
+    <!-- ========== Left Sidebar start ========== -->
+    {{>admin-sidebar}}
+    <!-- ========== Left Sidebar end ========== -->
+
+
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+      <!-- Start content -->
+      <div class="content">
+        <div class="container">
+          {{>admin-breadcrumb}}
           {{{body}}}
-        <!-- content end -->
+        </div> <!-- container -->
 
-        <!-- footer -->
-        {{>admin-footer}}
-      </div>
+      </div> <!-- content -->
 
-      <!-- ========== main content end ========== -->
-
-      <!-- ========== Right sidebar start ========== -->
-      {{>admin-subsidebar}}
-
-      <!-- ========== Right sidebar end ========== -->
+      <!-- footer -->
+      {{>admin-footer}}
+      <!-- End footer -->
 
     </div>
-    <!-- scripts -->
-    <script>
-      var resizefunc = [];
-    </script>
-  </body>
+
+
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+
+    <!-- ========== Right sidebar start ========== -->
+    {{>admin-subsidebar}}
+    <!-- ========== Right sidebar end ========== -->
+
+  </div>
+  <!-- END wrapper -->
+
+
+
+
+
+</body>
 
 </html>
